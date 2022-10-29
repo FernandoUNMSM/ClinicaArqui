@@ -1,0 +1,6 @@
+.clinicaContainer {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  background-color: #f8fafa;
+}
