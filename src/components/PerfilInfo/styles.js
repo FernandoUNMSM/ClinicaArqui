@@ -3,7 +3,8 @@ import styled from "styled-components"
 export const InfoPerfil = styled.div`
   background-color: #fff;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: start;
+  padding-left: 20px;
   align-items: center;
   height: 100%;
   /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -24,15 +25,20 @@ export const InfoPerfil = styled.div`
     }
   }
   .infoItem {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
     :nth-of-type(-n+2) {
      margin-bottom: 5px;
     }
     span {
       font-size: 13px;
       font-weight: bold;
+      margin-right: 10px;
     }
     p {
       font-size: 16px;
+      margin: 0;
     }
   }
 `

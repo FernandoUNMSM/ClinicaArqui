@@ -17,7 +17,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faTimes, faVirus } from '@fortawesome/free-solid-svg-icons'
 
 function Home({ }) {
-  const [user, setUser] = useState(sessionStorage.getItem('usuario'))
+  const [user, setUser] = useState(localStorage.getItem('usuario'))
   const [path, setPath] = useState('/Login')
   var tipo = ''
   useEffect(() => {
@@ -28,7 +28,7 @@ function Home({ }) {
     }
   }, [])
   const ala = () => {
-    tipo = JSON.parse(sessionStorage.getItem('usuario')).tipoUsuario
+    tipo = JSON.parse(localStorage.getItem('usuario')).tipoUsuario
     if (tipo === 'paciente') {
       setPath('/ClinicaPaciente')
     }

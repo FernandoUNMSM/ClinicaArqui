@@ -1,12 +1,10 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
 import './errormodal.css'
 
 export default function Errormodal({ setErrorM, message, type }) {
-  let history = useHistory()
   const cerrarModal = () => {
     setErrorM(false)
-    return (type === 'confirmCita') ? history.push('/ClinicaPaciente/Consultas') : null
+    // return (type === 'confirmCita') ? history.push('/ClinicaPaciente/Consultas') : null
   }
 
   return (

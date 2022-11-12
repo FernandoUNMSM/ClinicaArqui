@@ -5,14 +5,14 @@ export const PerfilContainer = styled.div`
   width: 100%;
   display: grid;
   padding: 20px 30px;
-  grid-template-columns: 360px 1fr;
+  grid-template-columns: 450px 1fr;
   grid-gap: 20px;
   overflow: auto;
   position: relative;
 `
 export const TopPerfil = styled.div`
   display: grid;
-  grid-template-rows: 140px auto;
+  grid-template-rows: 160px auto;
   grid-gap: 40px;
   margin-bottom: 20px;
 `

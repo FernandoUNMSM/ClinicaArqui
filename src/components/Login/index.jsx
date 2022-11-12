@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Form, FormContainer, Title, InputContainer, Button } from './styles'
 import { ErrorMessage } from "@hookform/error-message";
 
@@ -14,13 +14,12 @@ export default function LoginForm({ }) {
   const [loading, setLoading] = useState(false)
   const [errorM, setErrorM] = useState(false)
   const [message, setMessage] = useState('')
-
+  const navigate = useNavigate()
   const { handleSubmit, register, clearErrors, formState: { errors } } = useForm({
     mode: 'onBlur',
     reValidateMode: 'onChange',
     criteriaMode: "all"
   })
-  let history = useHistory()
 
   const onSumbit = (data, e) => {
     e.preventDefault()
@@ -28,11 +27,12 @@ export default function LoginForm({ }) {
     SendLogin(data)
       .then((res) => {
         setLoading(false)
+        console.log(res)
         if (res.valid) {
-          return history.push(res.path)
+          return navigate('/clinica')
         } else {
           setErrorM(true)
-          setMessage(res.message)
+          setMessage('Credenciales incorrectas')
         }
       })
   }

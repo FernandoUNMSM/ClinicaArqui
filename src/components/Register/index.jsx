@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { ErrorMessage } from "@hookform/error-message";
 
@@ -13,7 +13,7 @@ import sendRegistro from 'services/sendRegistro';
 import getInfoDNI from 'services/getInfoDNI';
 
 export default function RegisterForm({ }) {
-  let history = useHistory();
+  // let history = useHistory();
   const [loading, setLoading] = useState(false)
   const [errorM, setErrorM] = useState(false)
   const [message, setMessage] = useState('')
@@ -41,9 +41,9 @@ export default function RegisterForm({ }) {
       dni: data.dni || datesDNI.dni,
       sexo: datesDNI.idSexo,
       correo: data.correo,
-      contrasena: data.password,
-      vigencia: `${fecha.getDate()}/${fecha.getMonth() + 1}/${fecha.getFullYear() + 1}`,
-      tipoUsuario: 'paciente',
+      password: data.password,
+      // vigencia: `${fecha.getDate()}/${fecha.getMonth() + 1}/${fecha.getFullYear() + 1}`,
+      tipoUsuario: 0,
       direccion: (datesDNI.deDireccion != null) ? datesDNI.deDireccion : 'No cuenta con direccion',
       fechanac: datesDNI.feNacimiento.split('T')[0]
     }
@@ -51,7 +51,7 @@ export default function RegisterForm({ }) {
       .then(res => {
         setLoading(false)
         if (res === 'user created') {
-          return history.push('/ClinicaPaciente')
+          // return history.push('/ClinicaPaciente')
         } else {
           setErrorM(true)
           setMessage(res)

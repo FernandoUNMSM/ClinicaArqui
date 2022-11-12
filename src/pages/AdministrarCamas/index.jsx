@@ -25,18 +25,18 @@ export default function AdministrarCamas({ }) {
   const [seccion, setSeccion] = useState('')
 
 
-  useEffect(() => {
-    getCamas()
-      .then(setCamas)
-  }, [])
+  // useEffect(() => {
+  //   getCamas()
+  //     .then(setCamas)
+  // }, [])
 
-  const [font, setFont] = useState(localStorage.getItem('fontFamily'))
-  const [size, setSize] = useState(localStorage.getItem('fontSize'))
-  useEffect(() => {
-    if (font !== null) {
-      setFont2(font, size)
-    }
-  }, [])
+  // const [font, setFont] = useState(localStorage.getItem('fontFamily'))
+  // const [size, setSize] = useState(localStorage.getItem('fontSize'))
+  // useEffect(() => {
+  //   if (font !== null) {
+  //     setFont2(font, size)
+  //   }
+  // }, [])
 
   const editarCama = (evt) => {
     setEditar(!editar)
@@ -54,16 +54,16 @@ export default function AdministrarCamas({ }) {
     }).then(setCamas)
   }
   useEffect(() => {
-    getPacientes()
-      .then(res => {
-        setUsuario(prev => prev.concat(res.map(user => {
-          const userN = {
-            value: user.id,
-            label: user.nombre
-          }
-          return userN
-        })))
-      })
+    // getPacientes()
+    //   .then(res => {
+    //     setUsuario(prev => prev.concat(res.map(user => {
+    //       const userN = {
+    //         value: user.id,
+    //         label: user.nombre
+    //       }
+    //       return userN
+    //     })))
+    //   })
   }, [])
 
   return (<>

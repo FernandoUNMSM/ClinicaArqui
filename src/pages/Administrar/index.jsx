@@ -45,16 +45,16 @@ export default function Administrar({ type }) {
   const [iddelete, setIdDelete] = useState('')
   const { language, setLanguage, texts } = useContext(Context)
 
-  useEffect(() => {
-    setPacientes([])
-    setLoading(true)
-    SERVICES[type]()
-      .then(res => {
-        setPacientes(res)
-        setPacientesTotal(res)
-        setLoading(false)
-      })
-  }, [type])
+  // useEffect(() => {
+  //   setPacientes([])
+  //   setLoading(true)
+  //   SERVICES[type]()
+  //     .then(res => {
+  //       setPacientes(res)
+  //       setPacientesTotal(res)
+  //       setLoading(false)
+  //     })
+  // }, [type])
 
   const editarItem = (evt) => {
     const id = evt.target.parentNode.parentNode.parentNode.id;
@@ -105,7 +105,7 @@ export default function Administrar({ type }) {
         : null
     }
     <Container>
-      {(loading) ? <Loader /> : null}
+      {/* {(loading) ? <Loader /> : null} */}
       {(confirm)
         ? <ConfirmDelete
           setConfirm={setConfirm}

@@ -7,16 +7,12 @@ import { faBirthdayCake, faCloudMoon, faEnvelope, faFingerprint, faHospitalAlt, 
 import Context from '../../context/languageContext';
 
 export default function PerfilInfo({ user }) {
-  // const [user, setUser] = useState(JSON.parse(sessionStorage.getItem('usuario')))
+  // const [user, setUser] = useState(JSON.parse(localStorage.getItem('usuario')))
   const tipoUsuario = user.tipoUsuario;
   const { language, setLanguage, texts } = useContext(Context)
 
   return (<>
     <InfoPerfil>
-      <figure>
-        {/* <img src="https://m.media-amazon.com/images/I/51-H2JY9eyL._AC_SX466_.jpg" alt="" /> */}
-        <img src="https://image.flaticon.com/icons/png/512/149/149071.png" alt="" />
-      </figure>
       <div className="info">
         <div className="infoItem">
           <span>{texts[language].Nombre}</span>
@@ -29,6 +25,10 @@ export default function PerfilInfo({ user }) {
         <div className="infoItem">
           <span>Apellido Materno</span>
           <p>{user.apellidoM}</p>
+        </div>
+        <div className="infoItem">
+          <span>Tipo Usuario:</span>
+          <p>{(user.tipoUsuario === 0 ? 'PACIENTE' : user.tipoUsuario === 1 ? 'DOCTOR' : 'ADMINISTRADOR')}</p>
         </div>
       </div>
     </InfoPerfil>

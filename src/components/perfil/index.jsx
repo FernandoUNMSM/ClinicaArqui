@@ -10,8 +10,8 @@ import terminarCita from 'services/terminarCita'
 import ConcluirCita from '../concluirCita';
 
 export default function Perfil({
-  user = JSON.parse(sessionStorage.getItem('usuario')),
-  familiares = JSON.parse(sessionStorage.getItem('familiares'))
+  user = JSON.parse(localStorage.getItem('usuario')),
+  familiares = JSON.parse(localStorage.getItem('familiares'))
 }) {
   const { language, setLanguage, texts } = useContext(Context)
 
@@ -23,7 +23,7 @@ export default function Perfil({
   //     setFont2(font, size)
   //   }
   // }, [])
-  // const [user, setUser] = useState(JSON.parse(sessionStorage.getItem('usuario')))
+  // const [user, setUser] = useState(JSON.parse(localStorage.getItem('usuario')))
   const tipoUsuario = user.tipoUsuario;
 
   const [citas, setCitas] = useState([])

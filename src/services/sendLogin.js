@@ -1,9 +1,7 @@
 import { API_URL } from './API_KEYS.js'
-// import {Link, useHistory} from 'react-router-dom'
 
 function sendLogin(json) {
-  let path = '';
-  return fetch(`${API_URL}/signin`, {
+  return fetch(`${API_URL}/auth`, {
     method: 'POST',
     headers: {
       'Accept': 'application/json, text/plain, */*',
@@ -13,23 +11,19 @@ function sendLogin(json) {
   })
     .then(res => res.json())
     .then(res => {
-      (res.valid) ? sessionStorage.setItem('usuario', JSON.stringify(res.user)) : null;
-      (res.valid) ? sessionStorage.setItem('familiares', JSON.stringify(res.familiares)) : null
-
-      if (res.user.tipoUsuario === 'doctor') {
-        path = '/ClinicaDoctor'
+      if (!res.success) return {
+        valid: res.success,
+        message: res.err || null
       }
-      else if (res.user.tipoUsuario === 'paciente') {
-        path = '/ClinicaPaciente'
-      }
-      else if (res.user.tipoUsuario === 'administrador') {
-        path = '/ClinicaAdministrador'
-      }
+      localStorage.setItem('usuario', JSON.stringify(res.data))
       return {
-        valid: res.valid,
-        message: res.message,
-        path
+        valid: res.success
       }
-    });
+    }).catch(err => {
+      return {
+        valid: false,
+        message: err || null
+      }
+    })
 }
 export default sendLogin

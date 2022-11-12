@@ -22,7 +22,7 @@ export default function Comfirm({ especialidad, horario, turno, doctor }) {
 
   const enviarForm = () => {
     setLoading(true)
-    const iduser = JSON.parse(sessionStorage.getItem('usuario')).id
+    const iduser = JSON.parse(localStorage.getItem('usuario')).id
     createCita({
       idPaciente: iduser,
       especialidad,
