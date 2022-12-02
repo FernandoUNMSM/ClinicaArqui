@@ -4,9 +4,9 @@ import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import UserContext from 'context/userContext'
 import { UserContextProvider } from 'context/userContext'
 
-import Login from 'pages/login'
+import Login from 'pages/Login'
 import Workspace from 'pages/workspace'
-import Register from 'pages/register'
+import Register from 'pages/Register'
 import DoctoresList from 'pages/workspace/administratorViews/doctoresList'
 import PacientesList from 'pages/workspace/administratorViews/pacientesList'
 
