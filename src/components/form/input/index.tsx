@@ -13,6 +13,7 @@ interface Props {
   disabled?: any;
   uppercase?: any,
   length?: any
+  onChange?: any
 }
 
 const validateNumbers = (evt: any, length: any) => {
@@ -59,7 +60,7 @@ export const InputSimple = React.forwardRef(({ type = 'text', title, error = fal
   </>)
 })
 
-function Input({ named = '', title, type = 'text', disabled, forgot, register, required = false, placeholder = '', errors, uppercase = false, length = false, ...rest }: Props, ref: any) {
+function Input({ named = '', title, type = 'text', disabled, forgot, register, required = false, placeholder = '', errors, uppercase = false, length = false, onChange, ...rest }: Props, ref: any) {
   const { registro, params } = register
 
   return (<>
@@ -82,7 +83,9 @@ function Input({ named = '', title, type = 'text', disabled, forgot, register, r
           onKeyPress={(type === 'number') ? (evt: any) => validateNumbers(evt, length) : () => { }}
           placeholder={placeholder}
           {...registro(named, params)}
+          onChange={onChange}
           {...rest}
+
         />
           : <InputItem
             name={named}
@@ -92,6 +95,7 @@ function Input({ named = '', title, type = 'text', disabled, forgot, register, r
             onKeyPress={(type === 'number') ? (evt: any) => validateNumbers(evt, length) : () => { }}
             placeholder={placeholder}
             {...registro(named, params)}
+            onChange={onChange}
             {...rest}
           />
       }
