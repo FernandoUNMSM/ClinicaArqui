@@ -1,33 +1,47 @@
 {
-  "name": "clinicaux",
+  "name": "clinicaArqui",
+  "private": true,
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@date-io/date-fns": "v1",
-    "@fortawesome/fontawesome-svg-core": "^1.2.35",
-    "@fortawesome/free-solid-svg-icons": "^5.15.3",
-    "@fortawesome/react-fontawesome": "^0.1.14",
-    "@hookform/error-message": "^2.0.0",
-    "@material-ui/core": "4.12.1",
-    "@material-ui/icons": "^4.11.2",
-    "@material-ui/pickers": "3.3.10",
-    "date-fns": "2.0.0",
-    "react": "17.0.0",
-    "react-dom": "17.0.0",
-    "react-hook-form": "^7.12.2",
-    "react-perfect-scrollbar": "^1.5.8",
+    "@mui/styled-engine-sc": "^5.10.14",
+    "@mui/x-date-pickers": "^5.0.8",
+    "@mui/x-date-pickers-pro": "^5.0.8",
+    "@types/react-color": "^3.0.6",
+    "@types/styled-components": "5.1.26",
+    "apexcharts": "^3.36.3",
+    "modern-normalize": "^1.1.0",
+    "moment": "^2.29.4",
+    "react": "18.2.0",
+    "react-apexcharts": "^1.4.0",
+    "react-color": "^2.19.3",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.34.2",
+    "react-icons": "4.6.0",
     "react-router-dom": "6.3.0",
-    "react-select": "^4.3.1",
-    "styled-components": "^5.3.0"
+    "sass": "^1.54.5",
+    "styled-components": "^5.3.5",
+    "sweetalert2": "^11.4.29",
+    "swr": "^1.3.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-react-refresh": "1.3.1",
-    "eslint": "^7.30.0",
-    "sass": "^1.35.2",
-    "vite": "2.3.8"
+    "@types/lodash": "^4.14.188",
+    "@types/node": "^18.7.14",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "2.0.1",
+    "typescript": "^4.6.4",
+    "vite": "3.0.7",
+    "vite-tsconfig-paths": "^3.5.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "standard"
+    ]
   }
 }
