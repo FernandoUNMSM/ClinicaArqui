@@ -24,7 +24,6 @@ const ProtectedRoute = ({ children }: any) => {
   return (isLogin) ? children : <Navigate to='/login' />
 }
 
-
 export default function RouterClinica({ }) {
   return (<>
     <UserContextProvider>

@@ -44,6 +44,7 @@ export default function Login({ }) {
               <Input
                 title='DNI'
                 named='dni'
+                length='8'
                 type='number'
                 register={{
                   registro: register,

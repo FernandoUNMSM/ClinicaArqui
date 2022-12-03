@@ -1,19 +1,18 @@
-import { useFetching } from "hooks/useFetching";
-import { Link, useNavigate } from "react-router-dom";
-
-import ConfigContext from "context/configContext";
+import { useModal } from "hooks/useModal";
 
 import PageEstructure from "components/pageEstructure";
 import TableEstructure from "components/table/tableEstructure";
-import { ButtonBlackSolid } from 'styles/globals/globalButtons';
-import { FaRegHandPointRight } from 'react-icons/fa'
+import { useFetching } from "hooks/useFetching";
+import PacienteForm from "./pacienteForm";
 
 export default function PacientesList({ }) {
   const { data, mutate } = useFetching('/users/listar')
+  const [isOpen, open, close] = useModal()
 
   return (<>
+    {isOpen && <PacienteForm type="Nuevo" item={{ mutate }} isOpen={isOpen} closeModal={close} />}
     <PageEstructure>
-      <TableEstructure data={data}>
+      <TableEstructure data={data} createButton={{ onClick: open, title: 'Paciente' }}>
         <thead>
           <tr>
             <th>Nombre</th>
