@@ -7,9 +7,9 @@ import ConfigContext from 'context/configContext'
 import { theme } from 'styles/config/themes'
 import 'styles/main.scss'
 
-import ErrorBoundary from 'pages/error/errorBoundary'
+import ErrorBoundary from './pages/error/errorBoundary'
 
-import RouterClinica from 'router'
+import RouterClinica from './router'
 
 function App() {
   const { theme: themeGlobal }: any = useContext(ConfigContext)

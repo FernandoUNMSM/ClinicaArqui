@@ -56,7 +56,7 @@ export const LoginWindow = styled.div`
     display: initial;
   }
 `
-export const Img = styled.div`
+export const Img = styled.div<{path: string}>`
   ${(props: any) =>  `background-image: url('${props.path}');`}
   background-position: center;
   background-size: cover;

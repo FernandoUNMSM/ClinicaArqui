@@ -1,15 +1,13 @@
-import { Img, LoginContainer, LoginWindow } from 'pages/login/styles'
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from 'react-router-dom'
 import UserContext from "context/userContext";
-import { IoMdClose } from 'react-icons/io'
 
-import { useFetch } from "hooks/useFetching";
-import SpinLoader from "components/loader/spinLoader";
 import Input from "components/form/input";
 import { ButtonsContainer, ButtonSolid } from "styles/globals/globalButtons";
 import { TwoColums } from 'components/form/formEstructure/styles';
+import { useFetch } from "hooks/useFetching";
+import { Img, LoginContainer, LoginWindow } from "pages/login/styles";
 
 export default function Register({ }) {
   const { loginUser, setIsLogin } = useContext(UserContext)

@@ -4,12 +4,11 @@ import { SubmitHandler, useForm } from "react-hook-form";
 
 import Swal from "sweetalert2";
 
-import { useFetch, useFetching } from "hooks/useFetching";
-
 import PageModal from "components/modal/pageModal";
 import Input from "components/form/input";
 import FormEstructure from "components/form/formEstructure";
 import SelectWithInput from "components/form/selectWithInput";
+import { useFetch } from "hooks/useFetching";
 
 export default function DoctorForm({ type = 'Edit', item = {}, isOpen, closeModal }: any) {
   const { mutate } = item
@@ -49,7 +48,7 @@ export default function DoctorForm({ type = 'Edit', item = {}, isOpen, closeModa
     const dni = e.target.value
     if (dni.length < 8) return
     Fetch({ method: 'GET', url: `/pac/${dni}` })
-      .then(res => {
+      .then((res: any) => {
         setValue('nombre', res.data.nombres)
         setValue('apellidoP', res.data.apellido_paterno)
         setValue('apellidoM', res.data.apellido_materno)

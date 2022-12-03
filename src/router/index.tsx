@@ -10,7 +10,6 @@ import Register from 'pages/register'
 import DoctoresList from 'pages/workspace/administratorViews/doctoresList'
 import PacientesList from 'pages/workspace/administratorViews/pacientesList'
 
-
 const ProtectedRoute = ({ children }: any) => {
   const { isLogin } = useContext(UserContext)
   const location = useLocation()
