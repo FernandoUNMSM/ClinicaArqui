@@ -8,33 +8,61 @@ import { ButtonsContainer, ButtonSolid } from "styles/globals/globalButtons";
 import { TwoColums } from 'components/form/formEstructure/styles';
 import { useFetch } from "hooks/useFetching";
 import { Img, LoginContainer, LoginWindow } from "pages/login/styles";
+import Swal from "sweetalert2";
 
 export default function Register({ }) {
   const { loginUser, setIsLogin } = useContext(UserContext)
   const navigate = useNavigate()
-  const [openMessage, setOpenMessage] = useState(false)
   const { Fetch, isLoading } = useFetch()
-
+  const [data, setData]: any = useState({})
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm()
 
-  const onSubmit = (data: any) => {
-    console.log(data)
-    // setOpenMessage(false)
-    // Fetch({ url: '/heimdall/login', data: { email: data.email, password: data.password } })
-    //   .then((res: any) => {
-    //     if (res.success) {
-    //       loginUser(res.data)
-    //       setIsLogin(true)
-    //       navigate('/workspace')
-    //     } else {
-    //       setOpenMessage(true)
-    //     }
-    //   })
+  const onSubmit = (dataForm: any) => {
+    const send: any = {
+      ...dataForm,
+      tipoUsuario: 0,
+      sexo: data.data.sexo,
+      fechanac: data.data.fecha_nacimiento,
+      direccion: data.data.direccion_completa
+    }
+    Fetch({ url: '/users/register', data: send })
+      .then((res: any) => {
+        if (res.success) {
+          Swal.fire({
+            text: `Registro exitoso!`,
+            icon: "success",
+            confirmButtonText: 'Ok',
+            confirmButtonColor: '#a5dc86',
+          }).then(result => {
+            if (result.isConfirmed) {
+              loginUser(res.data)
+              setIsLogin(true)
+              navigate('/clinica')
+            }
+          })
+        }
+      })
   };
+
+  const getInfoDNI: any = (e: any) => {
+    const dni = e.target.value
+    if (dni.length < 8) return
+    Fetch({ method: 'GET', url: `/pac/${dni}` })
+      .then((res: any) => {
+        setData(res)
+        setValue('nombre', res.data.nombres)
+        setValue('apellidoP', res.data.apellido_paterno)
+        setValue('apellidoM', res.data.apellido_materno)
+      })
+  }
+  const emailRegex = /^\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b$/i;
+
+
   return (
     <>
       <LoginContainer>
@@ -47,66 +75,86 @@ export default function Register({ }) {
                 <Input
                   title='DNI'
                   named='dni'
+                  length='8'
                   type='number'
                   register={{
                     registro: register,
-                    params: {}
+                    params: {
+                      required: "Ingrese el dni",
+                    }
                   }}
+                  onChange={getInfoDNI}
                   errors={errors}
                 />
                 <Input
                   title='Nombre'
                   named='nombre'
+                  required={true}
                   register={{
                     registro: register,
-                    params: {}
+                    params: {
+                      required: "Ingrese el nombre",
+                    }
                   }}
-                  errors={errors}
-                />
+                  disabled={true}
+                  errors={errors} />
                 <TwoColums>
                   <Input
                     title='Apellido Paterno'
-                    named='nombre'
+                    named='apellidoP'
+                    required={true}
                     register={{
                       registro: register,
-                      params: {}
+                      params: {
+                        required: "Ingrese el code",
+                      }
                     }}
-                    errors={errors}
-                  />
+                    disabled={true}
+                    errors={errors} />
                   <Input
                     title='Apellido Materno'
-                    named='nombre'
+                    named='apellidoM'
+                    required={true}
                     register={{
                       registro: register,
-                      params: {}
+                      params: {
+                        required: "Ingrese el code",
+                      }
                     }}
-                    errors={errors}
-                  />
+                    disabled={true}
+                    errors={errors} />
                 </TwoColums>
                 <Input
-                  title='Email'
-                  named='email'
-                  type='email'
+                  title='Correo'
+                  named='correo'
+                  required={true}
                   register={{
                     registro: register,
-                    params: {}
+                    params: {
+                      required: "Ingrese el code",
+                      pattern: {
+                        message: "Your email may be incorrect",
+                        value: emailRegex,
+                      },
+                    }
                   }}
-                  errors={errors}
-                />
+                  errors={errors} />
                 <Input
-                  title='Password'
+                  title='Contraseña'
                   named='password'
-                  type='password'
+                  required={true}
                   register={{
                     registro: register,
-                    params: {}
+                    params: {
+                      required: "Ingrese el code",
+                    }
                   }}
-                  errors={errors}
-                />
+                  errors={errors} />
                 <Input
                   title='Confirmar constraseña'
                   named='password'
                   type='password'
+                  required={true}
                   register={{
                     registro: register,
                     params: {}
