@@ -1,4 +1,4 @@
-import { Img, LoginContainer, LoginWindow } from 'pages/login/styles'
+import { Img, LoginContainer, LoginWindow } from './../Login/styles'
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from 'react-router-dom'

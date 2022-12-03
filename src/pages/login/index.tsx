@@ -5,10 +5,10 @@ import UserContext from "context/userContext";
 import { IoMdClose } from 'react-icons/io'
 
 import { LoginContainer, LoginWindow, Img } from "./styles";
-import { useFetch } from "hooks/useFetching";
 import SpinLoader from "components/loader/spinLoader";
 import Input from "components/form/input";
 import { ButtonsContainer, ButtonSolid } from "styles/globals/globalButtons";
+import { useFetch } from "hooks/useFetching";
 
 export default function Login({ }) {
   const { loginUser, setIsLogin } = useContext(UserContext)
