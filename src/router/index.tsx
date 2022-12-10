@@ -9,6 +9,10 @@ import Workspace from 'pages/workspace'
 import Register from 'pages/register'
 import DoctoresList from 'pages/workspace/administratorViews/doctoresList'
 import PacientesList from 'pages/workspace/administratorViews/pacientesList'
+import CitasPacienteList from 'pages/workspace/pacienteViews/citasList'
+import CitasDoctoresList from 'pages/workspace/doctorViews/citasList'
+import CitasTerminadasPacienteList from 'pages/workspace/pacienteViews/citasTerminadasList'
+import CitasList from 'pages/workspace/administratorViews/citasList'
 
 const ProtectedRoute = ({ children }: any) => {
   const { isLogin } = useContext(UserContext)
@@ -46,6 +50,10 @@ export default function RouterClinica({ }) {
         }>
           <Route path='administrador/doctores' element={<DoctoresList />} />
           <Route path='administrador/pacientes' element={<PacientesList />} />
+          <Route path='administrador/citas' element={<CitasList />} />
+          <Route path='paciente/citas' element={<CitasPacienteList />} />
+          <Route path='paciente/citas_concluidas' element={<CitasTerminadasPacienteList />} />
+          <Route path='doctor/citas' element={<CitasDoctoresList />} />
         </Route>
       </Routes>
     </UserContextProvider>

@@ -10,6 +10,7 @@ export const ContainerMenuItem = styled.div`
         display: flex;
         align-items: center;
         color: ${(props) => props.theme.text.gray};
+        color: #33343c;
         transition: 0.3s;
         &.title-name {
           font-size: 14px;
@@ -26,9 +27,11 @@ export const ContainerMenuItem = styled.div`
       }
     }
     .link-active {
+        background-color: #4ca19c;
       .title-name {
         color: #fff;
       }
+      .title-icon,
       .title-icon {
         color: ${(props) => props.theme.colors.solidColors.blue};
       }
@@ -41,7 +44,10 @@ export const ContainerMenuItem = styled.div`
         padding: 10px 25px;
       }
       &:hover {
-        background-color: rgba(26, 26, 39, 1);
+        background-color: #4ca19c;
+        .title-name {
+          color: #fff;
+        }
       }
       a {
         width: 100%;
@@ -53,7 +59,7 @@ export const ContainerMenuItem = styled.div`
 export const SubMenu = styled.div<{ status: boolean; items: number }>`
   display: flex;
   flex-direction: column;
-  transition: .3s;
+  transition: 0.3s;
   height: ${(props: any) => (props.status ? `${44 * props.items}px` : 0)};
   overflow: hidden;
 `
@@ -71,7 +77,8 @@ export const ItemTitle = styled.li<{ status: boolean; statusSubmenu: boolean }>`
       ? props.theme.colors.grayPrimary
       : 'transparent'}; */
 
-  .title-name, .arrow svg {
+  .title-name,
+  .arrow svg {
     color: ${(props) =>
       props.status ? '#FFF' : props.theme.text.gray}!important;
   }

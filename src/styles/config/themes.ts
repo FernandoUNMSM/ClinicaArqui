@@ -9,7 +9,7 @@ export const theme: any = {
       },
       ui: {
         main: '#212121',
-        secondary: '#3699FF'
+        secondary: ' #63e1da'
         // secondary: 'rgba(10, 38, 163, 1)'
       },
       complementary: {
@@ -20,7 +20,7 @@ export const theme: any = {
       hover: {
         option: '#f5f8fa',
         selectOption: 'rgba(238, 240, 248)',
-        selecModalText: '#3699FF'
+        selecModalText: ' #63e1da'
       },
       background: {
         main: '#F9F2FF',
@@ -33,7 +33,7 @@ export const theme: any = {
         input: '#f5f8fa',
         inputActive: '#eef3f7',
         buttonLight: '#eaebea',
-        buttonSolid: '#3699FF'
+        buttonSolid: ' #63e1da'
       },
       textBackground: {
         main: '#000000',
@@ -50,7 +50,7 @@ export const theme: any = {
         yellow: 'rgba(255, 248, 221, 1)'
       },
       solidColors: {
-        blue: '#3699FF'
+        blue: ' #63e1da'
         // blue: 'rgba(10, 38, 163, 1)'
       },
       textSoftColors: {
@@ -73,7 +73,7 @@ export const theme: any = {
       gray2: '#a1a5b7',
       white: '#FFFFFF',
       grayToWhite: '#666',
-      filterText: '#3699FF',
+      filterText: ' #63e1da',
       lightGray: 'rgb(161, 165, 183)',
       darkGray: 'rgb(94, 98, 120)'
     },
@@ -137,7 +137,7 @@ export const theme: any = {
         yellow: 'rgba(57, 47, 40, 1)'
       },
       solidColors: {
-        blue: '#3699FF'
+        blue: ' #63e1da'
       },
       textSoftColors: {
         red: 'rgba(241, 65, 108, 1)',

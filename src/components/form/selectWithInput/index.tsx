@@ -7,6 +7,7 @@ import { LabelError } from '../input/styles';
 function SelectWithInput({ values, actualValue = undefined, setSelectedValue, title, keyword = 'name', toUp = false, error = false, required = false, disabled = false, uppercase = false }: any, ref: any) {
   const [selectValues, setSelectValues] = useState(values)
   const input: any = useRef(null)
+
   const searchValue = (e: any) => {
     const value = e.target.value.toLowerCase()
     setSelectValues(values.filter((item: any) => item[keyword].toLowerCase().includes(value)))

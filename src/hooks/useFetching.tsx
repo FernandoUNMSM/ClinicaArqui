@@ -27,7 +27,7 @@ export const useFetchingPartner = (url: any) => {
   if (data?.error === 'token_expired') {
     logOut()
     return { data: [], error, mutate }
-  } else if (data?.success === false) {
+  } else if (data?.success === false || data?.sucess === false) {
     Swal.fire({
       text: `${data?.error?.user_msg}`,
       icon: "warning",

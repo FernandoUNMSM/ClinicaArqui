@@ -84,6 +84,7 @@ export const SelectModalContainer = styled.div<{ buttonWidth: string }>`
     .userInfo {
       margin-left: 10px;
       p {
+        width: max-content;
         margin: 0;
       }
     }
