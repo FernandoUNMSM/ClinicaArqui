@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import { MenuContainer, MenuSection, IconOpen } from "./styles";
 import MenuItem from "components/menu/menuItem";
 import { AiOutlineHome, AiOutlineTag, AiOutlineKey } from 'react-icons/ai'
@@ -11,9 +11,14 @@ import { IoCodeSlashOutline, IoLanguage } from 'react-icons/io5'
 import { GiBackwardTime } from 'react-icons/gi'
 import { Link } from "react-router-dom";
 import { BiPlusMedical } from 'react-icons/bi'
+import UserContext from "context/userContext";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import { faUserDoctor, faMaskFace } from '@fortawesome/free-solid-svg-icons'
 
 export default function MenuWorkspace({ }: any) {
   const [menuOpen, setMenuOpen] = useState(true)
+  const { userInfo } = useContext(UserContext)
   const [subMenuActual, setSubMenuActual] = useState('')
   const ref: React.RefObject<any> = useRef(null);
 
@@ -23,7 +28,7 @@ export default function MenuWorkspace({ }: any) {
       setMenuOpen(false)
     }
   };
-
+  console.log(userInfo.tipoUsuario)
   useEffect(() => {
     window.addEventListener("mousedown", handleClickOutside);
 
@@ -38,7 +43,7 @@ export default function MenuWorkspace({ }: any) {
         <li>
           <div className="menuManage">
             <Link to='dashboard'>
-              {/* <img src="https://www.freewaylms.com/admin/admin-assets/images/header/logo-lms-white.png" alt="logo" /> */}
+              <img src="https://www.clipartmax.com/png/small/2-21295_hospital-clip-art-logotipo-de-un-hospital.png" alt="logo" />
             </Link>
             <HiOutlineMenu onClick={() => setMenuOpen(!menuOpen)} />
           </div>
@@ -49,20 +54,36 @@ export default function MenuWorkspace({ }: any) {
           </li>
           <MenuItem title='Dashboard' icon={<AiOutlineHome />} to='heimdall/dashboard' />
         </MenuSection> */}
+        {
+          (userInfo && userInfo?.tipoUsuario === 2) &&
+          <MenuSection>
+            <li className='heading'>
+              <h2>GESTION CLINICA</h2>
+            </li>
+            <MenuItem title='Pacientes' icon={<FontAwesomeIcon icon={faMaskFace} />} to='administrador/pacientes' />
+            <MenuItem title='Doctores' icon={<FontAwesomeIcon icon={faUserDoctor} />} to='administrador/doctores' />
+            {/* <MenuItem title='Permissions' icon={<FaUserAlt />} to='heimdall/security_accounts/permissions' /> */}
+          </MenuSection>
+        }
         <MenuSection>
-          <li className='heading'>
-            <h2>GESTION CLINICA</h2>
-          </li>
-          <MenuItem title='Pacientes' icon={<FaUserAlt />} to='administrador/pacientes' />
-          <MenuItem title='Doctores' icon={<AiOutlineTag />} to='administrador/doctores' />
-          {/* <MenuItem title='Permissions' icon={<FaUserAlt />} to='heimdall/security_accounts/permissions' /> */}
-        </MenuSection>
-        {/* <MenuSection>
           <li className='heading'>
             <h2>MODULO CITAS</h2>
           </li>
-          <MenuItem title='Citas' icon={<FaUserAlt />} to='heimdall/security_accounts/users' />
-        </MenuSection> */}
+          {
+            (userInfo && userInfo?.tipoUsuario === 2) &&
+            <MenuItem title='Citas' icon={<TbReportSearch />} to='administrador/citas' />
+          }
+          {
+            (userInfo && userInfo?.tipoUsuario === 0) && <>
+              <MenuItem title='Citas Pendientes' icon={<TbReportSearch />} to='paciente/citas' />
+              <MenuItem title='Citas Concluidas' icon={<GiBackwardTime />} to='paciente/citas_concluidas' />
+            </>
+          }
+          {
+            (userInfo && userInfo?.tipoUsuario === 1) &&
+            <MenuItem title='Citas' icon={<TbReportSearch />} to='doctor/citas' />
+          }
+        </MenuSection>
       </ul>
     </MenuContainer>
     <IconOpen onClick={() => setMenuOpen(!menuOpen)}>

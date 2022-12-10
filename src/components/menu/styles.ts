@@ -6,12 +6,13 @@ export const MenuContainer = styled.div<{ status: boolean }>`
   background-color: rgba(30, 30, 45, 1);
   height: 100vh;
   z-index: 210;
+  color: #33343c;
   ul {
     position: fixed;
     padding: 0;
     list-style: none;
     margin: 0;
-    background-color: rgba(30, 30, 45, 1);
+    background-color:   #63e1da;
     transition: 0.3s;
     height: 100vh;
     z-index: 200;
@@ -26,7 +27,7 @@ export const MenuContainer = styled.div<{ status: boolean }>`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(26, 26, 39, 1);
+    background-color:   #63e1da;
     height: 70px;
     a {
       width: 70%;
@@ -36,7 +37,7 @@ export const MenuContainer = styled.div<{ status: boolean }>`
       }
     }
     svg {
-      color: #a7b5c6;
+      color: #33343c;
       width: 25px;
       height: 25px;
       cursor: pointer;
@@ -146,6 +147,7 @@ export const MenuSection = styled.div`
     font-size: 14px;
     font-weight: 300;
     color: #708096;
+    color: #33343c;
   }
   li {
     cursor: pointer;
