@@ -96,7 +96,7 @@ export const theme: any = {
       },
       ui: {
         main: '#212121',
-        secondary: '#304474'
+        secondary: '#4ca19c;'
         // secondary: 'rgba(10, 38, 163, 1)'
       },
       complementary: {
@@ -120,7 +120,7 @@ export const theme: any = {
         input: '#1b1b29',
         inputActive: '#171723',
         buttonLight: '#818897',
-        buttonSolid: '#304474'
+        buttonSolid: '#4ca19c;'
       },
       textBackground: {
         main: '#cdcdde',
