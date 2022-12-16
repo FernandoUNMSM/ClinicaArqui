@@ -3,7 +3,6 @@ import { useLocation } from 'react-router-dom'
 
 import { BiPlusMedical } from 'react-icons/bi'
 
-import Paginator from 'components/table/paginator'
 import TopManageTable from 'components/table/topManageTable'
 import SpinLoader from 'components/loader/spinLoader'
 import ConfigContext from 'context/configContext'
@@ -46,7 +45,6 @@ export default function TableEstructure({ data, size = '', search = { orientatio
         }
         {(data && data.length === 0) && <p className="noItems">No results</p>}
       </div>
-      {/* <Paginator /> */}
     </TableContainer>
   </>)
 }
