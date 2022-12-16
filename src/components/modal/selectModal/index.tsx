@@ -1,4 +1,4 @@
-import { useModal } from './../../../hooks/useModal'
+import { useModal } from 'hooks/useModal'
 import { useRef, useEffect } from 'react'
 
 import { SelectModalContainer, OptionsContainer } from './styles'

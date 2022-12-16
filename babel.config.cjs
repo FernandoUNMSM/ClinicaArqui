@@ -1,10 +1,9 @@
 module.exports = {
-  plugins: ['macros','@babel/transform-runtime'],
+  plugins: ['macros'],
   presets: [
     "@babel/preset-env",
     ["@babel/preset-react", {"runtime": "automatic"}],
     '@babel/preset-typescript'
-    , "babel-preset-vite"
   ],
   ignore: [".css", ".scss"]
 }

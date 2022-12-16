@@ -1,20 +1,32 @@
+import { useContext, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
 import { BiPlusMedical } from 'react-icons/bi'
 
 import TopManageTable from 'components/table/topManageTable'
 import SpinLoader from 'components/loader/spinLoader'
+import ConfigContext from 'context/configContext'
 
 import { ButtonSolid } from 'styles/globals/globalButtons'
 import { formatSnakeToNormal } from 'utilities/formatStrings'
 import { TableContainer, TableSimpleContainer } from './styles'
 
-export default function TableEstructure({ data, size = '', createButton = false, extraButtons = <></>, style = {}, children }: any) {
+export default function TableEstructure({ data, size = '', search = { orientation: 'horizontal', advance: false }, createButton = false, extraButtons = <></>, style = {}, children }: any) {
+  const { setTotalItems } = useContext(ConfigContext)
   const { pathname }: any = useLocation()
+
+  useEffect(() => {
+    if (!data) return
+    setTotalItems(data.total)
+  }, [data])
+
+  useEffect(() => {
+    return () => setTotalItems(10)
+  }, [])
 
   return (<>
     <TableContainer size={size}>
-      <TopManageTable>
+      <TopManageTable search={search}>
         {extraButtons}
         {createButton &&
           <ButtonSolid size='action' onClick={createButton.onClick}>
