@@ -1,5 +1,5 @@
-import Breadcrumb from './../breadcrumb'
-import { ContainerW100 } from './../../styles/globals/globalGrid'
+import Breadcrumb from 'components/breadcrumb'
+import { ContainerW100 } from 'styles/globals/globalGrid'
 
 export default function PageEstructure({ children }: any) {
   return (<>

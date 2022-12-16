@@ -1,11 +1,11 @@
 import { useContext, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Link, useNavigate } from 'react-router-dom'
-import UserContext from './../../context/userContext'
+import UserContext from 'context/userContext'
 
-import Input from './../../components/form/input'
-import { ButtonsContainer, ButtonSolid } from './../../styles/globals/globalButtons'
-import { useFetch } from './../../hooks/useFetching'
+import Input from 'components/form/input'
+import { ButtonsContainer, ButtonSolid } from 'styles/globals/globalButtons'
+import { useFetch } from 'hooks/useFetching'
 import { Img, LoginContainer, LoginWindow } from './styles'
 
 export default function Login({ }) {
@@ -21,12 +21,15 @@ export default function Login({ }) {
   } = useForm()
 
   const onSubmit = (data: any) => {
-    return Fetch({ url: '/users/auth', data: { dni: data.dni, password: data.password } })
+    // setOpenMessage(false)
+    Fetch({ url: '/users/auth', data: { dni: data.dni, password: data.password } })
       .then((res: any) => {
         if (res.success) {
           loginUser(res.data)
           setIsLogin(true)
           navigate('/clinica')
+        } else {
+          // setOpenMessage(true)
         }
       })
   }
@@ -48,7 +51,6 @@ export default function Login({ }) {
                   params: {}
                 }}
                 errors={errors}
-                alt="dni"
               />
               <Input
                 title='Password'
@@ -58,12 +60,11 @@ export default function Login({ }) {
                   registro: register,
                   params: {}
                 }}
-                alt="password"
                 errors={errors}
               />
             </div>
             <ButtonsContainer align='center'>
-              <ButtonSolid size='large' data-testid="buttonSend">Log In</ButtonSolid>
+              <ButtonSolid size='large'>Log In</ButtonSolid>
             </ButtonsContainer>
             <p>Aun no tienes cuenta? <Link to='/register'>Registrate</Link></p>
           </form>
