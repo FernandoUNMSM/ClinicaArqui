@@ -3,31 +3,10 @@ import UserContext from 'context/userContext'
 import useSWR from 'swr'
 
 import Swal from 'sweetalert2'
-import PartnerContext from 'context/partnerContext'
 
 export const useFetching = (url: any) => {
   const { data, error, mutate } = useSWR([!url || `${import.meta.env.VITE_API_URL}${url}`])
   if (data?.success === false) {
-    Swal.fire({
-      text: `${data?.error?.user_msg}`,
-      icon: 'warning',
-      confirmButtonText: 'Ok',
-      confirmButtonColor: '#f1416c',
-    })
-    return { data: false, error, mutate }
-  }
-  else {
-    return { data: data?.data || null, error, mutate }
-  }
-}
-
-export const useFetchingPartner = (url: any) => {
-  const { partnerInfo, logOut } = useContext(PartnerContext)
-  const { data, error, mutate } = useSWR([!url || `${import.meta.env.VITE_API_URL}${url}`, partnerInfo?.meta?.token])
-  if (data?.error === 'token_expired') {
-    logOut()
-    return { data: [], error, mutate }
-  } else if (data?.success === false || data?.sucess === false) {
     Swal.fire({
       text: `${data?.error?.user_msg}`,
       icon: 'warning',

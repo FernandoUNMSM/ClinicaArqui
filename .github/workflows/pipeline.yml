@@ -21,3 +21,7 @@ jobs:
         run: npm install @typescript-eslint/eslint-plugin@latest eslint-plugin-react@latest --save-dev
       - name: Lint
         run: npm run eslint
+      - name: Build
+        run: npm run build
+      - name: Ejecutar Tests
+        run: npm run test
