@@ -1,5 +1,5 @@
-import { ButtonGrayLight, ButtonSolid, ButtonsContainer, ButtonRedSolid } from 'styles/globals/globalButtons'
-import SpinLoader from 'components/loader/spinLoader'
+import { ButtonGrayLight, ButtonSolid, ButtonsContainer } from './../../../styles/globals/globalButtons'
+import SpinLoader from './../../loader/spinLoader'
 import { Form } from './styles'
 
 export default function FormEstructure({ onSubmit, closeModal, isLoading, extraButtons = <></>, disabled = false, children }: any) {
