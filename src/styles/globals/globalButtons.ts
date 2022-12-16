@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { bps } from 'styles/config/breakpoints'
+import { bps } from './../config/breakpoints'
 
 const Button = styled.button<{ size?: string }>`
   outline: none;
@@ -78,59 +78,59 @@ export const ButtonSolid: any = styled(Button)<{ size: string }>`
   }};
 `
 
-export const ButtonLight = styled(Button)<{ size: string }>`
-  background-color: ${(props: any) => props.theme.colors.background.quaternary};
-  color: ${(props: any) => props.theme.colors.ui.secondary};
-`
+// export const ButtonLight = styled(Button)<{ size: string }>`
+//   background-color: ${(props: any) => props.theme.colors.background.quaternary};
+//   color: ${(props: any) => props.theme.colors.ui.secondary};
+// `
 
 export const ButtonGrayLight = styled(Button)<{ size: string }>`
   background-color: ${(props: any) =>
     props.theme.colors.background.buttonLight};
   color: ${(props: any) => props.theme.text.grayToWhite};
 `
-export const ButtonRedSolid = styled(ButtonSolid)<{ size: string }>`
-  background-color: #f1416c;
-`
-export const ButtonBlackSolid = styled(ButtonSolid)<{ size: string }>`
-  background-color: #2f353b;
-`
-export const ButtonGreenSolid = styled(ButtonSolid)<{ size: string, active?: boolean }>`
-  background-color: rgba(80, 205, 137, 1);
-  ${(props: any) => {
-    if (props.active) {
-      return css`
-        background-color: #fff;
-        color: rgba(80, 205, 137, 1);
-        border: 2px solid rgba(80, 205, 137, 1);
-      `
-    }
-  }};
-`
+// export const ButtonRedSolid = styled(ButtonSolid)<{ size: string }>`
+//   background-color: #f1416c;
+// `
+// export const ButtonBlackSolid = styled(ButtonSolid)<{ size: string }>`
+//   background-color: #2f353b;
+// `
+// export const ButtonGreenSolid = styled(ButtonSolid)<{ size: string, active?: boolean }>`
+//   background-color: rgba(80, 205, 137, 1);
+//   ${(props: any) => {
+//     if (props.active) {
+//       return css`
+//         background-color: #fff;
+//         color: rgba(80, 205, 137, 1);
+//         border: 2px solid rgba(80, 205, 137, 1);
+//       `
+//     }
+//   }};
+// `
 
-export const StatusButton = styled(ButtonSolid)<{ tipo: string }>`
-  height: 26px;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  font-style: normal;
-  min-width: fit-content;
-  border-radius: 6px;
-  padding: 0 11px;
-  margin: auto;
-  background-color: ${(props: any) => {
-    if (props.tipo === 'Approved') {
-      return 'rgba(80, 205, 137, 1)'
-    } else if (props.tipo === 'Waiting') {
-      return 'rgba(255, 199, 0, 1)'
-    } else if (props.tipo === 'Wrong') {
-      return 'rgba(241, 65, 108, 1)'
-    }
-  }};
+// export const StatusButton = styled(ButtonSolid)<{ tipo: string }>`
+//   height: 26px;
+//   font-weight: 400;
+//   font-size: 12px;
+//   line-height: 14px;
+//   font-style: normal;
+//   min-width: fit-content;
+//   border-radius: 6px;
+//   padding: 0 11px;
+//   margin: auto;
+//   background-color: ${(props: any) => {
+//     if (props.tipo === 'Approved') {
+//       return 'rgba(80, 205, 137, 1)'
+//     } else if (props.tipo === 'Waiting') {
+//       return 'rgba(255, 199, 0, 1)'
+//     } else if (props.tipo === 'Wrong') {
+//       return 'rgba(241, 65, 108, 1)'
+//     }
+//   }};
 
-  ::after {
-    content: ${(props: any) => `'${props.tipo}'`};
-  }
-`
+//   ::after {
+//     content: ${(props: any) => `'${props.tipo}'`};
+//   }
+// `
 
 export const ButtonsContainer = styled.div<{ align?: string }>`
   display: flex;

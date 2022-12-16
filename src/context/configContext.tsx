@@ -1,26 +1,13 @@
 import { createContext, useState, useEffect } from 'react'
 
 interface Config {
-  quantityPerPage?: any,
-  setQuantityPerPage?: any,
-  page?: any,
-  setPage?: any,
-  totalItems?: any,
-  setTotalItems?: any,
-  searchValue?: any,
-  setSearchValue?: any,
   theme?: any,
   changeTheme?: any,
-  advanceSearch?: any
 }
 
 const ConfigContext = createContext<Config>({})
 
 export function ConfigContextProvider({ children }: any) {
-  const [quantityPerPage, setQuantityPerPage] = useState(25)
-  const [page, setPage] = useState(1)
-  const [totalItems, setTotalItems] = useState(10)
-  const [searchValue, setSearchValue] = useState('')
   const [theme, setTheme] = useState('light')
 
   const changeTheme = (themeToChange: string) => {
@@ -35,14 +22,6 @@ export function ConfigContextProvider({ children }: any) {
   }, [])
 
   return <ConfigContext.Provider value={{
-    quantityPerPage,
-    setQuantityPerPage,
-    page,
-    setPage,
-    totalItems,
-    setTotalItems,
-    searchValue,
-    setSearchValue,
     theme,
     changeTheme
   }}>
