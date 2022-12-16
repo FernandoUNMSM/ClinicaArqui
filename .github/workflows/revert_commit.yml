@@ -1,26 +1,20 @@
-name: Automatic Rebase
+name: Automatic Revert
+
 on:
   issue_comment:
-    types: [created]
+    types:
+      - created
+
 jobs:
-  rebase:
-    name: Rebase
+  revert-commit:
     runs-on: ubuntu-latest
-    if: >-
-      github.event.issue.pull_request != '' &&
-      (
-        contains(github.event.comment.body, '/rebase') ||
-        contains(github.event.comment.body, '/autosquash')
-      )
+
+    if: contains(github.event.comment.body, '/revert')
+
     steps:
-      - name: Checkout the latest code
+      - name: Checkout latest code
         uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.GH_PAT }}
-          fetch-depth: 0 # otherwise, you will fail to push refs to dest repo
-      - name: Automatic Rebase
-        uses: cirrus-actions/rebase@1.7
-        with:
-          autosquash: ${{ contains(github.event.comment.body, '/rebase') || contains(github.event.comment.body, '/rebase-autosquash') }}
+      - name: Automatic Revert
+        uses: srt32/revert@v0.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
