@@ -7,16 +7,12 @@ on:
 
 jobs:
   revert-commit:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
-    if: contains(github.event.comment.body, '/revert')
+    if: contains(github.event.comment.body, 'revert')
 
     steps:
       - name: Checkout latest code
         uses: actions/checkout@v3
-      - name: Git
-        uses: git config --global --add safe.directory /github/workspace
-      - name: Automatic Revert
-        uses: srt32/revert@v0.0.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+      - name: Git 1
+        run: git ${{github.event.comment.body}}
