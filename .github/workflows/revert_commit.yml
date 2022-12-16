@@ -14,12 +14,12 @@ jobs:
     steps:
       - name: Checkout latest code
         uses: actions/checkout@v3
-      - name: Git
-        run: git config --global --add safe.directory /github/workspace
-      - name: Git 2
+      - name: Git 1
         run: git config user.name “FernandoUNMSM"
+      - name: Git 2
+        run: git config user.email oscar.cabellos@unmsm.edu.pe
       - name: Git 3
-        run: git config user.email "oscar.cabellos@unmsm.edu.pe"
+        run: git config --global --add safe.directory /github/workspace
       - name: Automatic Revert
         uses: srt32/revert@v0.0.1
         env:
