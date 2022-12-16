@@ -15,7 +15,7 @@ jobs:
       - name: Checkout latest code
         uses: actions/checkout@v3
       - name: Git
-        uses: git config --global --add safe.directory /github/workspace
+        run: git config --global --add safe.directory /github/workspace
       - name: Automatic Revert
         uses: srt32/revert@v0.0.1
         env:
