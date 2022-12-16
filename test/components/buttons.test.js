@@ -15,7 +15,6 @@ test('render button size large', () => {
   )
 })
 test('render button size medium', () => {
-  // comentario
   const component = render(
     <ThemeProvider theme={theme.light}>
       <ButtonSolid size='medium' />
