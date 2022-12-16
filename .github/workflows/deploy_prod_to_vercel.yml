@@ -1,4 +1,4 @@
-name: Deployment Pipeline
+name: Deployment Prodtuction Pipeline
 
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
@@ -7,13 +7,12 @@ env:
 on:
   push:
     branches:
-      - development
       - production
 
 jobs:
   deploy:
     runs-on: ubuntu-20.04
-    environment: development
+    environment: production
     steps:
       - uses: actions/checkout@v3
         with:
