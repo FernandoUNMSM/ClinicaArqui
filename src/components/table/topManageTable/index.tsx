@@ -1,9 +1,8 @@
 import { ManageContainer } from './styles'
-import QuantityRowsSelector from 'components/table/quantityRowsSelector'
 
-export default function TopManageTable({ search, children }: any) {
+export default function TopManageTable({ children }: any) {
   return (<>
-    <ManageContainer orientation={search.orientation}>
+    <ManageContainer>
       <div className="leftManage">
         {children}
       </div>
