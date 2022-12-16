@@ -1,21 +1,20 @@
 import React from 'react'
 import { InputContainer, InputItem, LabelError } from './styles'
 
-// interface Props {
-//   named?: string
-//   title: any,
-//   type?: string,
-//   register: any,
-//   forgot?: any,
-//   errors: any,
-//   required?: any;
-//   placeholder?: string;
-//   disabled?: any;
-//   uppercase?: any,
-//   length?: any
-//   onChange?: any
-//   alt?
-// }
+interface Props {
+  named?: string
+  title: any,
+  type?: string,
+  register: any,
+  forgot?: any,
+  errors: any,
+  required?: any;
+  placeholder?: string;
+  disabled?: any;
+  uppercase?: any,
+  length?: any
+  onChange?: any
+}
 
 const validateNumbers = (evt: any, length: any) => {
   const ch = String.fromCharCode(evt.which)
@@ -61,7 +60,7 @@ export const InputSimple = React.forwardRef(({ type = 'text', title, error = fal
   </>)
 })
 
-function Input({ named = '', title, type = 'text', disabled, forgot, register, required = false, placeholder = '', errors, uppercase = false, length = false, onChange, ...rest }: any, ref: any) {
+function Input({ named = '', title, type = 'text', disabled, forgot, register, required = false, placeholder = '', errors, uppercase = false, length = false, onChange, ...rest }: Props, ref: any) {
   const { registro, params } = register
 
   return (<>

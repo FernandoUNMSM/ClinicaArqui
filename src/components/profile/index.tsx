@@ -1,8 +1,8 @@
 import { useContext } from 'react'
 
-import SelectModal from './../modal/selectModal'
-import UserContext from './../../context/userContext'
-import { UserInfo } from './../../styles/globals/globalTables'
+import SelectModal from 'components/modal/selectModal'
+import UserContext from 'context/userContext'
+import { UserInfo } from 'styles/globals/globalTables'
 
 export default function Profile({ }) {
   const { logOut, userInfo } = useContext(UserContext)

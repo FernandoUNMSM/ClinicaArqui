@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
-import { SubMenu } from './menuItem/styles'
-import { bps } from './../../styles/config/breakpoints'
+import { SubMenu } from 'components/menu/menuItem/styles'
+import { bps } from 'styles/config/breakpoints'
 
 export const MenuContainer = styled.div<{ status: boolean }>`
   background-color: rgba(30, 30, 45, 1);

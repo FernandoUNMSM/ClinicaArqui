@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components'
-import { ContainerW100 } from './../../../styles/globals/globalGrid'
-import { bps } from './../../../styles/config/breakpoints'
+import { ContainerW100 } from 'styles/globals/globalGrid'
+import { bps } from 'styles/config/breakpoints'
 
-export const ManageContainer = styled(ContainerW100)`
+export const ManageContainer = styled(ContainerW100)<{ orientation: string }>`
   display: flex;
   justify-content: space-between;
   flex-direction: row-reverse;
@@ -65,4 +65,16 @@ export const ManageContainer = styled(ContainerW100)`
       margin: 1rem 0;
     }
   }
+
+  ${(props: any) => {
+    if(props.orientation === 'vertical'){
+      return css`
+        flex-direction: column;
+        .leftManage{
+          justify-content: end;
+          margin-bottom: 10px;
+        }
+      `
+    }
+  }}
 `

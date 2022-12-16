@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components'
-import { bps } from './../../styles/config/breakpoints'
+import { bps } from 'styles/config/breakpoints'
 
 const backgroundtransition = keyframes`
   from {
