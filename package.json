@@ -108,6 +108,11 @@
       "ts-jest": {
         "isolatedModules": false
       }
+    },
+    "coverageThreshold": {
+      "global": {
+          "lines": 80
+      }
     }
   }
 }
