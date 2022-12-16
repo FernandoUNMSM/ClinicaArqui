@@ -1,11 +1,13 @@
 name: Automatic Rebase
+
 on:
   issue_comment:
     types: [created]
+
 jobs:
   rebase:
     name: Rebase
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     if: >-
       github.event.issue.pull_request != '' &&
       (
@@ -17,7 +19,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.GH_PAT }}
-          fetch-depth: 0 # otherwise, you will fail to push refs to dest repo
+          fetch-depth: 0
       - name: Automatic Rebase
         uses: cirrus-actions/rebase@1.7
         with:
