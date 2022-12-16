@@ -30,7 +30,3 @@ jobs:
         run: npm run test
       - name: Mostrar Coverage
         run: npm run coverage
-      - uses: ArtiomTr/jest-coverage-report-action@v2
-        id: coverage
-        with:
-          output: report-markdown
