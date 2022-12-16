@@ -16,8 +16,8 @@ jobs:
         with:
           node-version: 16
       - name: Instalar dependencias
-        run: npm install
+        run: npm install --no-audit --no-found --no-optional
       - name: Instalar linter
-        run: npm install @typescript-eslint/eslint-plugin@latest --save-dev
+        run: npm install @typescript-eslint/eslint-plugin@latest eslint-plugin-react@latest --save-dev
       - name: Lint
         run: npm run eslint
