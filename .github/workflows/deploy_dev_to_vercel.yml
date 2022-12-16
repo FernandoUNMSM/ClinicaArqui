@@ -1,4 +1,4 @@
-name: Deployment Pipeline
+name: Deployment Development Pipeline
 
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
@@ -10,7 +10,7 @@ on:
       - development
 
 jobs:
-  deploy:
+  deploy_dev:
     runs-on: ubuntu-20.04
     environment: development
     steps:

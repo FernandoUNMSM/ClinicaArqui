@@ -85,6 +85,7 @@ function Input({ named = '', title, type = 'text', disabled, forgot, register, r
           {...registro(named, params)}
           onChange={onChange}
           {...rest}
+
         />
           : <InputItem
             name={named}
