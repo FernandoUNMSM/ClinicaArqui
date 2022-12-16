@@ -17,3 +17,13 @@ test('render content', () => {
     </BrowserRouter>
   )
 })
+
+test('render content menu off', () => {
+  const component = render(
+    <BrowserRouter>
+      <ThemeProvider theme={theme.light}>
+        <MenuClinica status={false}/>
+      </ThemeProvider>
+    </BrowserRouter>
+  )
+})

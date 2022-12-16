@@ -6,11 +6,10 @@ import SelectModal from './../../modal/selectModal'
 import ConfigContext from './../../../context/configContext'
 
 export default function ThemeModal() {
-  const [isOpen, setIsOpen] = useState(false)
   const { changeTheme } = useContext(ConfigContext)
 
   return (
-    <SelectModal width='150px' buttonElement={<div className="buttonSelectOnHeader" onClick={() => setIsOpen(true)}>
+    <SelectModal width='150px' buttonElement={<div className="buttonSelectOnHeader">
       <BsFillSunFill />
     </div>}>
       <div className="optionItem" onClick={() => changeTheme('light')}>

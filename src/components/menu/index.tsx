@@ -10,8 +10,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { faUserDoctor, faMaskFace } from '@fortawesome/free-solid-svg-icons'
 
-export default function MenuClinica({ }: any) {
-  const [menuOpen, setMenuOpen] = useState(true)
+export default function MenuClinica({ status = true }: any) {
+  const [menuOpen, setMenuOpen] = useState(status)
   const { userInfo } = useContext(UserContext)
   const ref: React.RefObject<any> = useRef(null)
 

@@ -17,3 +17,14 @@ test('render content', () => {
     </BrowserRouter>
   )
 })
+test('render content menu item', () => {
+  const component = render(
+    <BrowserRouter>
+      <ThemeProvider theme={theme.light}>
+        <MenuItem title='test' icon={<></>}>
+          <h2>test</h2>
+        </MenuItem>
+      </ThemeProvider>
+    </BrowserRouter>
+  )
+})
