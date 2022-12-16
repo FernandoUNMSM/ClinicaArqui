@@ -19,7 +19,7 @@ jobs:
       - name: Git 2
         run: git config user.email oscar.cabellos@unmsm.edu.pe
       - name: Git 3
-        run: git config --global --add safe.directory /github/workspace
+        run: git config --global --add safe.directory *
       - name: Automatic Revert
         uses: srt32/revert@v0.0.1
         env:
