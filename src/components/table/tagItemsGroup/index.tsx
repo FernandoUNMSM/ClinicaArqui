@@ -1,6 +1,6 @@
-import PageModal from "components/modal/pageModal";
-import Tagitem from "components/table/tagItem";
-import { useModal } from "hooks/useModal";
+import PageModal from 'components/modal/pageModal'
+import Tagitem from 'components/table/tagItem'
+import { useModal } from 'hooks/useModal'
 
 export default function TagItemGroup({ tags, keyword, width = '250px' }: any) {
   const [isOpenTagModal, openTagModal, closeTagModal] = useModal()

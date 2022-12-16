@@ -17,12 +17,12 @@ interface Props {
 }
 
 const validateNumbers = (evt: any, length: any) => {
-  var ch = String.fromCharCode(evt.which);
+  const ch = String.fromCharCode(evt.which)
   if (!(/[0-9]/.test(ch))) {
-    evt.preventDefault();
+    evt.preventDefault()
   }
   if (length && evt.target.value.concat(ch).length > length) {
-    evt.preventDefault();
+    evt.preventDefault()
   }
 }
 

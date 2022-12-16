@@ -2,7 +2,7 @@ export const formatNumber = (num: number) => {
   if (!num) return num
   const stringNum = num.toString()
   if (stringNum.length < 4) return stringNum
-  var nom = stringNum.split('')
+  const nom = stringNum.split('')
   nom.splice(1, 0, ',')
   return nom.join('')
 }

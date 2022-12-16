@@ -1,4 +1,4 @@
-import styled, {keyframes} from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 export const animation = keyframes`
   from{
@@ -9,7 +9,7 @@ export const animation = keyframes`
   }
 `
 
-export const SpinContainer = styled.div<{color: string, width: string}>`
+export const SpinContainer = styled.div<{ color: string, width: string }>`
   /* margin-right: 5px; */
   .spin {
     width: ${props => props.width};

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import SelectModal from "components/modal/selectModal";
+import SelectModal from 'components/modal/selectModal'
 import { MdKeyboardArrowDown } from 'react-icons/md'
-import { LabelError } from '../input/styles';
+import { LabelError } from '../input/styles'
 
 export default function SelectSimple({ selectText = 'Select', data, value, setValue, toUp = false, error = false }: any) {
   const [isOpen, setIsOpen] = useState(false)

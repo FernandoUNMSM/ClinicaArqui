@@ -1,13 +1,13 @@
-import { useModal } from "hooks/useModal";
+import { useModal } from 'hooks/useModal'
 
-import PageEstructure from "components/pageEstructure";
-import TableEstructure from "components/table/tableEstructure";
-import CitaForm from "./citaForm";
-import { useFetching } from "hooks/useFetching";
-import { useContext } from "react";
-import UserContext from "context/userContext";
-import SelectModal from "components/modal/selectModal";
-import { MdKeyboardArrowDown } from "react-icons/md";
+import PageEstructure from 'components/pageEstructure'
+import TableEstructure from 'components/table/tableEstructure'
+import CitaForm from './citaForm'
+import { useFetching } from 'hooks/useFetching'
+import { useContext } from 'react'
+import UserContext from 'context/userContext'
+import SelectModal from 'components/modal/selectModal'
+import { MdKeyboardArrowDown } from 'react-icons/md'
 
 const status = ['En Curso', 'Concluida']
 

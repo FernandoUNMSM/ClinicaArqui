@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import Swal from "sweetalert2";
+import React, { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 import { MdKeyboardArrowDown } from 'react-icons/md'
 import { FiEdit } from 'react-icons/fi'
 import { AiOutlineKey } from 'react-icons/ai'
 import { MdDeleteOutline } from 'react-icons/md'
 
-import { useModal } from "hooks/useModal";
-import { useFetch } from "hooks/useFetching";
+import { useModal } from 'hooks/useModal'
+import { useFetch } from 'hooks/useFetching'
 
-import SelectModal from "components/modal/selectModal";
-import { formatSnakeToNormal } from "utilities/formatStrings";
+import SelectModal from 'components/modal/selectModal'
+import { formatSnakeToNormal } from 'utilities/formatStrings'
 
 export default function SelectActions({ item, editOption = true, editComponent, deleteComponent, deleteOption = true, viewOption = false, viewComponent, toUp, children }: any) {
   const { key, mutate } = item
@@ -27,7 +27,7 @@ export default function SelectActions({ item, editOption = true, editComponent, 
   const showDeleteModal = () => {
     Swal.fire({
       title: 'Are you sure?',
-      text: "Once deleted, you will not be able to recover this item!",
+      text: 'Once deleted, you will not be able to recover this item!',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#f1416c',
@@ -86,7 +86,7 @@ export default function SelectActions({ item, editOption = true, editComponent, 
       {
         deleteOption &&
         <div className="optionItem delete" onClick={() => {
-          (deleteComponent) ? openDelete() : showDeleteModal();
+          (deleteComponent) ? openDelete() : showDeleteModal()
         }}>
           <MdDeleteOutline />
           Delete

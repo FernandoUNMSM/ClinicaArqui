@@ -74,19 +74,19 @@ export const ItemTitle = styled.li<{ status: boolean; statusSubmenu: boolean }>`
     props.status
       ? ''
       : props.statusSubmenu
-      ? props.theme.colors.grayPrimary
-      : 'transparent'}; */
+        ? props.theme.colors.grayPrimary
+        : 'transparent'}; */
 
   .title-name,
   .arrow svg {
     color: ${(props) =>
-      props.status ? '#FFF' : props.theme.text.gray}!important;
+    props.status ? '#FFF' : props.theme.text.gray}!important;
   }
   .title-icon {
     color: ${(props) =>
-      props.status
-        ? props.theme.colors.solidColors.blue
-        : props.theme.text.gray}!important;
+    props.status
+      ? props.theme.colors.solidColors.blue
+      : props.theme.text.gray}!important;
   }
 
   .arrow {

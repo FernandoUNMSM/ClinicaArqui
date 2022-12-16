@@ -1,8 +1,8 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect } from 'react'
 import { MdKeyboardArrowDown } from 'react-icons/md'
-import ConfigContext from "context/configContext";
-import { SelectQuantity } from "./styles";
-import SelectModal from "components/modal/selectModal";
+import ConfigContext from 'context/configContext'
+import { SelectQuantity } from './styles'
+import SelectModal from 'components/modal/selectModal'
 
 export default function QuantityRowsSelector({ }: any) {
   const [openQuantity, setOpenQuantity] = useState(false)

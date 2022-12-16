@@ -1,5 +1,5 @@
 import { useRef, useContext, useEffect } from 'react'
-import { Container, InputContainer, Input, ButtonSearch, AdvanceModeContainer } from "./styles"
+import { Container, InputContainer, Input, ButtonSearch, AdvanceModeContainer } from './styles'
 import { BiSearchAlt2 } from 'react-icons/bi'
 import ConfigContext from 'context/configContext'
 import { ButtonGrayLight } from 'styles/globals/globalButtons'

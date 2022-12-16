@@ -1,6 +1,6 @@
-import { ManageContainer } from "./styles";
-import QuantityRowsSelector from "components/table/quantityRowsSelector";
-import SearchInput from "components/form/searchInput";
+import { ManageContainer } from './styles'
+import QuantityRowsSelector from 'components/table/quantityRowsSelector'
+import SearchInput from 'components/form/searchInput'
 
 export default function TopManageTable({ search, children }: any) {
   return (<>

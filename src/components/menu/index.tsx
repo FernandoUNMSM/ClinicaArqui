@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef, useContext } from "react";
-import { MenuContainer, MenuSection, IconOpen } from "./styles";
-import MenuItem from "components/menu/menuItem";
+import { useState, useEffect, useRef, useContext } from 'react'
+import { MenuContainer, MenuSection, IconOpen } from './styles'
+import MenuItem from 'components/menu/menuItem'
 import { AiOutlineHome, AiOutlineTag, AiOutlineKey } from 'react-icons/ai'
 import { BsGear } from 'react-icons/bs'
 import { FaUserAlt, FaUsers, FaLayerGroup } from 'react-icons/fa'
@@ -9,9 +9,9 @@ import { MdOutlineMessage } from 'react-icons/md'
 import { TbReportSearch } from 'react-icons/tb'
 import { IoCodeSlashOutline, IoLanguage } from 'react-icons/io5'
 import { GiBackwardTime } from 'react-icons/gi'
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 import { BiPlusMedical } from 'react-icons/bi'
-import UserContext from "context/userContext";
+import UserContext from 'context/userContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { faUserDoctor, faMaskFace } from '@fortawesome/free-solid-svg-icons'
@@ -20,21 +20,21 @@ export default function MenuWorkspace({ }: any) {
   const [menuOpen, setMenuOpen] = useState(true)
   const { userInfo } = useContext(UserContext)
   const [subMenuActual, setSubMenuActual] = useState('')
-  const ref: React.RefObject<any> = useRef(null);
+  const ref: React.RefObject<any> = useRef(null)
 
   const handleClickOutside = (event: any) => {
-    const className = event.target.classList.value;
+    const className = event.target.classList.value
     if (menuOpen && ref.current && !ref.current.contains(event.target) && className !== 'clickable' && window.innerWidth <= 700) {
       setMenuOpen(false)
     }
-  };
+  }
   console.log(userInfo.tipoUsuario)
   useEffect(() => {
-    window.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener('mousedown', handleClickOutside)
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
   }, [ref, open]);//eslint-disable-line
 
   return (<>

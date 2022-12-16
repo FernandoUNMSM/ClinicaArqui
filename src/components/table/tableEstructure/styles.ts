@@ -14,12 +14,12 @@ export const TableContainer = styled(ContainerW100)<{ size?: string }>`
   }
   table {
     min-width: ${(props) => {
-      if (props.size === 'extra_large') return '1500px'
-      if (props.size === 'large') return '1300px'
-      if (props.size === 'medium') return '800px'
-      if (props.size === 'small') return '600px'
-      return '1100px'
-    }};
+    if (props.size === 'extra_large') return '1500px'
+    if (props.size === 'large') return '1300px'
+    if (props.size === 'medium') return '800px'
+    if (props.size === 'small') return '600px'
+    return '1100px'
+  }};
     width: 100%;
     text-align: left;
     border-spacing: 0;

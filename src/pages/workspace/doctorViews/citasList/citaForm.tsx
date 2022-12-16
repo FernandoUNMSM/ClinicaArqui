@@ -1,14 +1,14 @@
 
-import { useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useState } from 'react'
+import { SubmitHandler, useForm } from 'react-hook-form'
 
-import Swal from "sweetalert2";
-import { useContext } from "react";
-import UserContext from "context/userContext";
-import PageModal from "components/modal/pageModal";
-import FormEstructure from "components/form/formEstructure";
-import SelectWithInput from "components/form/selectWithInput";
-import { useFetch, useFetching } from "hooks/useFetching";
+import Swal from 'sweetalert2'
+import { useContext } from 'react'
+import UserContext from 'context/userContext'
+import PageModal from 'components/modal/pageModal'
+import FormEstructure from 'components/form/formEstructure'
+import SelectWithInput from 'components/form/selectWithInput'
+import { useFetch, useFetching } from 'hooks/useFetching'
 
 export default function CitaForm({ type = 'Edit', item = {}, isOpen, closeModal }: any) {
   const { userInfo } = useContext(UserContext)
@@ -22,7 +22,7 @@ export default function CitaForm({ type = 'Edit', item = {}, isOpen, closeModal 
 
   const {
     handleSubmit
-  } = useForm();
+  } = useForm()
 
   const onSubmit: SubmitHandler<any> = (data) => {
     const send: any = {
@@ -36,14 +36,14 @@ export default function CitaForm({ type = 'Edit', item = {}, isOpen, closeModal 
         if (res.success || res.sucess) {
           closeModal()
           Swal.fire({
-            text: `Cita creado!`,
-            icon: "success",
+            text: 'Cita creado!',
+            icon: 'success',
             confirmButtonText: 'Ok',
             confirmButtonColor: '#a5dc86',
           })
         }
       })
-  };
+  }
 
 
   return (<>

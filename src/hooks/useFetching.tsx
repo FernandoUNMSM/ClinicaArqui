@@ -1,16 +1,16 @@
 import { useContext, useState } from 'react'
 import UserContext from 'context/userContext'
-import useSWR from "swr";
+import useSWR from 'swr'
 
-import Swal from "sweetalert2";
-import PartnerContext from 'context/partnerContext';
+import Swal from 'sweetalert2'
+import PartnerContext from 'context/partnerContext'
 
 export const useFetching = (url: any) => {
   const { data, error, mutate } = useSWR([!url || `${import.meta.env.VITE_API_URL}${url}`])
   if (data?.success === false) {
     Swal.fire({
       text: `${data?.error?.user_msg}`,
-      icon: "warning",
+      icon: 'warning',
       confirmButtonText: 'Ok',
       confirmButtonColor: '#f1416c',
     })
@@ -30,7 +30,7 @@ export const useFetchingPartner = (url: any) => {
   } else if (data?.success === false || data?.sucess === false) {
     Swal.fire({
       text: `${data?.error?.user_msg}`,
-      icon: "warning",
+      icon: 'warning',
       confirmButtonText: 'Ok',
       confirmButtonColor: '#f1416c',
     })
@@ -65,7 +65,7 @@ export const useFetch = () => {
         } else if (!res?.success) {
           Swal.fire({
             text: `${res?.error?.user_msg}`,
-            icon: "warning",
+            icon: 'warning',
             confirmButtonText: 'Ok',
             confirmButtonColor: '#f1416c',
           })
@@ -78,7 +78,7 @@ export const useFetch = () => {
 
   const FetchBlob = ({ method = 'POST', url, data, name = 'filename.xlsx' }: any) => {
     if (!userInfo?.meta?.token) return new Promise((resolve, reject) => {
-      resolve([]);
+      resolve([])
     })
     setIsLoading(true)
     return fetch(`${import.meta.env.VITE_API_URL}${url}`, {
@@ -91,13 +91,13 @@ export const useFetch = () => {
     })
       .then(response => response.blob())
       .then((blob: any) => {
-        var url = window.URL.createObjectURL(blob);
-        var a = document.createElement('a');
-        a.href = url;
-        a.download = name;
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
+        const url = window.URL.createObjectURL(blob)
+        const a = document.createElement('a')
+        a.href = url
+        a.download = name
+        document.body.appendChild(a)
+        a.click()
+        a.remove()
       })
   }
 

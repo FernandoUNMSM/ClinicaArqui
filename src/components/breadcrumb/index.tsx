@@ -1,6 +1,6 @@
-import { useLocation, useParams } from "react-router-dom";
-import { formatSnakeToNormal } from "utilities/formatStrings";
-import { Container } from "./styles";
+import { useLocation, useParams } from 'react-router-dom'
+import { formatSnakeToNormal } from 'utilities/formatStrings'
+import { Container } from './styles'
 
 export default function Breadcrumb() {
   const location = useLocation()

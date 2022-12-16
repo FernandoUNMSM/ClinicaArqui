@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import { NavLink as NavLinkReactRouter, useLocation } from "react-router-dom";
-import { ContainerMenuItem, ItemTitle, SubMenu } from "./styles";
+import { useState, useEffect } from 'react'
+import { NavLink as NavLinkReactRouter, useLocation } from 'react-router-dom'
+import { ContainerMenuItem, ItemTitle, SubMenu } from './styles'
 import { IoIosArrowBack } from 'react-icons/io'
 import { GoPrimitiveDot } from 'react-icons/go'
 

@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react'
 
-import SelectModal from "components/modal/selectModal";
+import SelectModal from 'components/modal/selectModal'
 import { IoMdArrowDropdown } from 'react-icons/io'
-import { InputSimple } from '../input';
-import { SelectTagInputContainer } from './styles';
+import { InputSimple } from '../input'
+import { SelectTagInputContainer } from './styles'
 import { IoMdClose } from 'react-icons/io'
-import { LabelError } from '../input/styles';
+import { LabelError } from '../input/styles'
 
 function SelectTagInput({ actualValues, totalValues, title, keyword, setValue = () => { }, error = false, toUp = false, required = false, disabled = false, uppercase = false }: any) {
   const [selectValues, setSelectValues] = useState(totalValues)
@@ -75,7 +75,7 @@ function SelectTagInput({ actualValues, totalValues, title, keyword, setValue = 
           <div className={`optionItem${(selectActualValues.some(((item: any) => item[keyword] === value[keyword])) ? ' value-selected' : '')}`}
             key={index}
             onClick={(e) => handleValue(value, e)}
-            style={{textTransform: `${uppercase ? 'uppercase' : 'initial'}`}}
+            style={{ textTransform: `${uppercase ? 'uppercase' : 'initial'}` }}
           >
             {value[keyword]}
           </div>)}
