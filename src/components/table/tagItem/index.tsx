@@ -1,4 +1,4 @@
-import { Tag } from "./styles";
+import { Tag } from './styles'
 
 export default function Tagitem({ title, clickEvent }: any) {
   return (<>

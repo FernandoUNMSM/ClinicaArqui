@@ -1,8 +1,8 @@
-import PageEstructure from "components/pageEstructure";
-import TableEstructure from "components/table/tableEstructure";
-import { useFetching } from "hooks/useFetching";
-import { useContext } from "react";
-import UserContext from "context/userContext";
+import PageEstructure from 'components/pageEstructure'
+import TableEstructure from 'components/table/tableEstructure'
+import { useFetching } from 'hooks/useFetching'
+import { useContext } from 'react'
+import UserContext from 'context/userContext'
 
 const status = ['En Curso', 'Concluida']
 

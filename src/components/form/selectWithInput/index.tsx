@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
-import SelectModal from "components/modal/selectModal";
-import { InputSimple } from '../input';
-import SpinLoader from "components/loader/spinLoader";
-import { LabelError } from '../input/styles';
+import SelectModal from 'components/modal/selectModal'
+import { InputSimple } from '../input'
+import SpinLoader from 'components/loader/spinLoader'
+import { LabelError } from '../input/styles'
 
 function SelectWithInput({ values, actualValue = undefined, setSelectedValue, title, keyword = 'name', toUp = false, error = false, required = false, disabled = false, uppercase = false }: any, ref: any) {
   const [selectValues, setSelectValues] = useState(values)

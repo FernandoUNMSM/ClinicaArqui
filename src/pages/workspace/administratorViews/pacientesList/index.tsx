@@ -1,9 +1,9 @@
-import { useModal } from "hooks/useModal";
+import { useModal } from 'hooks/useModal'
 
-import PageEstructure from "components/pageEstructure";
-import TableEstructure from "components/table/tableEstructure";
-import { useFetching } from "hooks/useFetching";
-import PacienteForm from "./pacienteForm";
+import PageEstructure from 'components/pageEstructure'
+import TableEstructure from 'components/table/tableEstructure'
+import { useFetching } from 'hooks/useFetching'
+import PacienteForm from './pacienteForm'
 
 export default function PacientesList({ }) {
   const { data, mutate } = useFetching('/users/listar')

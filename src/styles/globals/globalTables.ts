@@ -17,14 +17,14 @@ export const UserInfo = styled.div<{ index: number }>`
     border-radius: 50%;
     font-weight: initial;
     ${(props: any) => {
-      const colorIndex = props.index % 5
-      const colorsArray = Object.values(props.theme.colors.softColors)
-      const colorsTextArray = Object.values(props.theme.colors.textSoftColors)
-      return `
+    const colorIndex = props.index % 5
+    const colorsArray = Object.values(props.theme.colors.softColors)
+    const colorsTextArray = Object.values(props.theme.colors.textSoftColors)
+    return `
         background-color: ${colorsArray[colorIndex]};
         color: ${colorsTextArray[colorIndex]};
       `
-    }}
+  }}
   }
 
   .infoContainer {

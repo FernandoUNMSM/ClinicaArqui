@@ -1,14 +1,14 @@
-import { useContext, useState } from "react";
-import { useForm } from "react-hook-form";
+import { useContext, useState } from 'react'
+import { useForm } from 'react-hook-form'
 import { Link, useNavigate } from 'react-router-dom'
-import UserContext from "context/userContext";
+import UserContext from 'context/userContext'
 
-import Input from "components/form/input";
-import { ButtonsContainer, ButtonSolid } from "styles/globals/globalButtons";
-import { TwoColums } from 'components/form/formEstructure/styles';
-import { useFetch } from "hooks/useFetching";
-import { Img, LoginContainer, LoginWindow } from "pages/login/styles";
-import Swal from "sweetalert2";
+import Input from 'components/form/input'
+import { ButtonsContainer, ButtonSolid } from 'styles/globals/globalButtons'
+import { TwoColums } from 'components/form/formEstructure/styles'
+import { useFetch } from 'hooks/useFetching'
+import { Img, LoginContainer, LoginWindow } from 'pages/login/styles'
+import Swal from 'sweetalert2'
 
 export default function Register({ }) {
   const { loginUser, setIsLogin } = useContext(UserContext)
@@ -34,8 +34,8 @@ export default function Register({ }) {
       .then((res: any) => {
         if (res.success) {
           Swal.fire({
-            text: `Registro exitoso!`,
-            icon: "success",
+            text: 'Registro exitoso!',
+            icon: 'success',
             confirmButtonText: 'Ok',
             confirmButtonColor: '#a5dc86',
           }).then(result => {
@@ -47,7 +47,7 @@ export default function Register({ }) {
           })
         }
       })
-  };
+  }
 
   const getInfoDNI: any = (e: any) => {
     const dni = e.target.value
@@ -60,7 +60,7 @@ export default function Register({ }) {
         setValue('apellidoM', res.data.apellido_materno)
       })
   }
-  const emailRegex = /^\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b$/i;
+  const emailRegex = /^\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b$/i
 
 
   return (
@@ -80,7 +80,7 @@ export default function Register({ }) {
                   register={{
                     registro: register,
                     params: {
-                      required: "Ingrese el dni",
+                      required: 'Ingrese el dni',
                     }
                   }}
                   onChange={getInfoDNI}
@@ -93,7 +93,7 @@ export default function Register({ }) {
                   register={{
                     registro: register,
                     params: {
-                      required: "Ingrese el nombre",
+                      required: 'Ingrese el nombre',
                     }
                   }}
                   disabled={true}
@@ -106,7 +106,7 @@ export default function Register({ }) {
                     register={{
                       registro: register,
                       params: {
-                        required: "Ingrese el code",
+                        required: 'Ingrese el code',
                       }
                     }}
                     disabled={true}
@@ -118,7 +118,7 @@ export default function Register({ }) {
                     register={{
                       registro: register,
                       params: {
-                        required: "Ingrese el code",
+                        required: 'Ingrese el code',
                       }
                     }}
                     disabled={true}
@@ -131,9 +131,9 @@ export default function Register({ }) {
                   register={{
                     registro: register,
                     params: {
-                      required: "Ingrese el code",
+                      required: 'Ingrese el code',
                       pattern: {
-                        message: "Your email may be incorrect",
+                        message: 'Your email may be incorrect',
                         value: emailRegex,
                       },
                     }
@@ -146,7 +146,7 @@ export default function Register({ }) {
                   register={{
                     registro: register,
                     params: {
-                      required: "Ingrese el code",
+                      required: 'Ingrese el code',
                     }
                   }}
                   errors={errors} />

@@ -1,6 +1,6 @@
-import { useFetch } from "hooks/useFetching";
-import { createContext, useReducer } from "react";
-import { capitalize } from "utilities/formatStrings";
+import { useFetch } from 'hooks/useFetching'
+import { createContext, useReducer } from 'react'
+import { capitalize } from 'utilities/formatStrings'
 import Swal from 'sweetalert2'
 
 interface Batch {
@@ -144,7 +144,7 @@ const reducer = (state: any, action: any) => {
   return actionReducer ? actionReducer(state, action) : state
 }
 
-const BatchContext = createContext<Batch>({});
+const BatchContext = createContext<Batch>({})
 
 export function BatchContextProvider({ children }: any) {
   const { Fetch: FetchPreview, isLoading: isLoadingPreview } = useFetch()
@@ -220,7 +220,7 @@ export function BatchContextProvider({ children }: any) {
     const batchValuesFormatted = batchValues.map((item: any) => [item[0], getQuantityTotal(item[1].data.map((item: any) => item.quantity))])
 
     const valuesQuantity = batchValuesFormatted.map((item: any) => item[1])
-    const allEqual = batchValuesFormatted.every(val => val[1] === batchValuesFormatted[0][1]);
+    const allEqual = batchValuesFormatted.every(val => val[1] === batchValuesFormatted[0][1])
 
     const maxValue = valuesQuantity.reduce((prev: any, current: any) => prev > current ? prev : current)
 
@@ -252,17 +252,17 @@ export function BatchContextProvider({ children }: any) {
       const batchToSend: any = formatData(cant)
 
       FetchCreateBatch({ url: '/magneto/mediacodes/batch', data: batchToSend })
-      .then(res => {
-        dispatch({ type: ACTIONS.ADD_PREVIEW, payload: { status: 'created', data: res.data} })
-        if (res.success) {
-          Swal.fire({
-            title: 'Created!',
-            text: `Se crearon los mediacodes`,
-            icon: 'success',
-            confirmButtonColor: '#a5dc86',
-          })
-        }
-      })
+        .then(res => {
+          dispatch({ type: ACTIONS.ADD_PREVIEW, payload: { status: 'created', data: res.data } })
+          if (res.success) {
+            Swal.fire({
+              title: 'Created!',
+              text: 'Se crearon los mediacodes',
+              icon: 'success',
+              confirmButtonColor: '#a5dc86',
+            })
+          }
+        })
     }
   }
 
@@ -298,7 +298,7 @@ export function BatchContextProvider({ children }: any) {
     addDescription: (data: any) => dispatch({ type: ACTIONS.ADD_DESCRIPTION, payload: data }),
     resetBatch: () => dispatch({ type: ACTIONS.RESET_BATCH }),
     updateOptionalFields: (data: any) => {
-      let newOptionalFields: any = {
+      const newOptionalFields: any = {
         domain: false,
         title: false,
         landing: false,

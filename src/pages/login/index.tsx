@@ -1,12 +1,12 @@
-import { useContext, useState } from "react";
-import { useForm } from "react-hook-form";
+import { useContext, useState } from 'react'
+import { useForm } from 'react-hook-form'
 import { Link, useNavigate } from 'react-router-dom'
-import UserContext from "context/userContext";
+import UserContext from 'context/userContext'
 
-import Input from "components/form/input";
-import { ButtonsContainer, ButtonSolid } from "styles/globals/globalButtons";
-import { useFetch } from "hooks/useFetching";
-import { Img, LoginContainer, LoginWindow } from "./styles";
+import Input from 'components/form/input'
+import { ButtonsContainer, ButtonSolid } from 'styles/globals/globalButtons'
+import { useFetch } from 'hooks/useFetching'
+import { Img, LoginContainer, LoginWindow } from './styles'
 
 export default function Login({ }) {
   const { loginUser, setIsLogin } = useContext(UserContext)
@@ -32,7 +32,7 @@ export default function Login({ }) {
           // setOpenMessage(true)
         }
       })
-  };
+  }
 
   return (<>
     <LoginContainer>

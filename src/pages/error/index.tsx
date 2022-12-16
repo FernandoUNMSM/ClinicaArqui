@@ -1,6 +1,6 @@
-import { Container } from "./styles";
-import { useContext } from "react";
-import UserContext from "context/userContext";
+import { Container } from './styles'
+import { useContext } from 'react'
+import UserContext from 'context/userContext'
 
 export default function ErrorPage() {
   const { logOut } = useContext(UserContext)

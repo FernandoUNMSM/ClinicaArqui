@@ -1,6 +1,5 @@
-import { ManageContainer } from "./styles";
-import QuantityRowsSelector from "components/table/quantityRowsSelector";
-import SearchInput from "components/form/searchInput";
+import { ManageContainer } from './styles'
+import QuantityRowsSelector from 'components/table/quantityRowsSelector'
 
 export default function TopManageTable({ search, children }: any) {
   return (<>
@@ -9,7 +8,6 @@ export default function TopManageTable({ search, children }: any) {
         {children}
       </div>
       <div className="rigthManage">
-        {/* <SearchInput search={search} /> */}
       </div>
     </ManageContainer>
   </>)

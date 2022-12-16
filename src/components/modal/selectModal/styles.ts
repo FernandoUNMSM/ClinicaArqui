@@ -73,7 +73,7 @@ export const SelectModalContainer = styled.div<{ buttonWidth: string }>`
     background-color: ${(props: any) => props.theme.background.gray};
     :hover {
       background-color: ${(props: any) =>
-        props.theme.colors.background.quaternary};
+    props.theme.colors.background.quaternary};
       color: ${(props: any) => props.theme.colors.hover.selecModalText};
     }
   }
@@ -162,7 +162,7 @@ export const OptionsContainer = styled.div<{ width: string }>`
     }
     &:hover {
       background-color: ${(props: any) =>
-        props.theme.colors.background.quaternary};
+    props.theme.colors.background.quaternary};
       color: ${(props: any) => props.theme.colors.hover.selecModalText};
     }
     &.value-selected {
@@ -175,7 +175,7 @@ export const OptionsContainer = styled.div<{ width: string }>`
     }
     &.active{
       color: ${(props: any) =>
-        props.theme.colors.background.quaternary};
+    props.theme.colors.background.quaternary};
       background-color: ${(props: any) => props.theme.colors.hover.selecModalText};
     }
   }
@@ -191,7 +191,7 @@ export const OptionsContainer = styled.div<{ width: string }>`
       transition: 0.3s;
       :hover {
         background-color: ${(props: any) =>
-          props.theme.colors.background.quaternary};
+    props.theme.colors.background.quaternary};
       }
     }
   }

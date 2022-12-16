@@ -1,14 +1,14 @@
 
-import { useEffect, useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useEffect, useState } from 'react'
+import { SubmitHandler, useForm } from 'react-hook-form'
 
-import Swal from "sweetalert2";
+import Swal from 'sweetalert2'
 
-import PageModal from "components/modal/pageModal";
-import Input from "components/form/input";
-import FormEstructure from "components/form/formEstructure";
-import SelectWithInput from "components/form/selectWithInput";
-import { useFetch } from "hooks/useFetching";
+import PageModal from 'components/modal/pageModal'
+import Input from 'components/form/input'
+import FormEstructure from 'components/form/formEstructure'
+import SelectWithInput from 'components/form/selectWithInput'
+import { useFetch } from 'hooks/useFetching'
 
 export default function DoctorForm({ type = 'Edit', item = {}, isOpen, closeModal }: any) {
   const { mutate } = item
@@ -21,7 +21,7 @@ export default function DoctorForm({ type = 'Edit', item = {}, isOpen, closeModa
     handleSubmit,
     setValue,
     formState: { errors },
-  } = useForm();
+  } = useForm()
 
   const onSubmit: SubmitHandler<any> = (data) => {
     const send: any = {
@@ -35,14 +35,14 @@ export default function DoctorForm({ type = 'Edit', item = {}, isOpen, closeModa
         if (res.success) {
           closeModal()
           Swal.fire({
-            text: `Doctor creado!`,
-            icon: "success",
+            text: 'Doctor creado!',
+            icon: 'success',
             confirmButtonText: 'Ok',
             confirmButtonColor: '#a5dc86',
           })
         }
       })
-  };
+  }
 
   const getInfoDNI: any = (e: any) => {
     const dni = e.target.value
@@ -58,7 +58,7 @@ export default function DoctorForm({ type = 'Edit', item = {}, isOpen, closeModa
       })
   }
 
-  const emailRegex = /^\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b$/i;
+  const emailRegex = /^\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b$/i
 
   return (<>
     <PageModal
@@ -80,7 +80,7 @@ export default function DoctorForm({ type = 'Edit', item = {}, isOpen, closeModa
           register={{
             registro: register,
             params: {
-              required: "Ingrese el dni",
+              required: 'Ingrese el dni',
             }
           }}
           errors={errors}
@@ -93,7 +93,7 @@ export default function DoctorForm({ type = 'Edit', item = {}, isOpen, closeModa
           register={{
             registro: register,
             params: {
-              required: "Ingrese el nombre",
+              required: 'Ingrese el nombre',
             }
           }}
           disabled={true}
@@ -105,7 +105,7 @@ export default function DoctorForm({ type = 'Edit', item = {}, isOpen, closeModa
           register={{
             registro: register,
             params: {
-              required: "Ingrese el code",
+              required: 'Ingrese el code',
             }
           }}
           disabled={true}
@@ -117,7 +117,7 @@ export default function DoctorForm({ type = 'Edit', item = {}, isOpen, closeModa
           register={{
             registro: register,
             params: {
-              required: "Ingrese el code",
+              required: 'Ingrese el code',
             }
           }}
           disabled={true}
@@ -129,7 +129,7 @@ export default function DoctorForm({ type = 'Edit', item = {}, isOpen, closeModa
           register={{
             registro: register,
             params: {
-              required: "Ingrese el code",
+              required: 'Ingrese el code',
             }
           }}
           disabled={true}
@@ -141,7 +141,7 @@ export default function DoctorForm({ type = 'Edit', item = {}, isOpen, closeModa
           register={{
             registro: register,
             params: {
-              required: "Ingrese el code",
+              required: 'Ingrese el code',
             }
           }}
           disabled={true}
@@ -153,7 +153,7 @@ export default function DoctorForm({ type = 'Edit', item = {}, isOpen, closeModa
           register={{
             registro: register,
             params: {
-              required: "Ingrese el name",
+              required: 'Ingrese el name',
             }
           }}
           disabled={true}
@@ -165,9 +165,9 @@ export default function DoctorForm({ type = 'Edit', item = {}, isOpen, closeModa
           register={{
             registro: register,
             params: {
-              required: "Ingrese el code",
+              required: 'Ingrese el code',
               pattern: {
-                message: "Your email may be incorrect",
+                message: 'Your email may be incorrect',
                 value: emailRegex,
               },
             }
@@ -195,7 +195,7 @@ export default function DoctorForm({ type = 'Edit', item = {}, isOpen, closeModa
           register={{
             registro: register,
             params: {
-              required: "Ingrese el code",
+              required: 'Ingrese el code',
             }
           }}
           errors={errors} />

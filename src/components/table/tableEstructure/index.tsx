@@ -1,16 +1,15 @@
-import { useContext, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useContext, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 
 import { BiPlusMedical } from 'react-icons/bi'
 
-import Paginator from "components/table/paginator";
-import TopManageTable from "components/table/topManageTable";
-import SpinLoader from "components/loader/spinLoader";
-import ConfigContext from "context/configContext";
+import TopManageTable from 'components/table/topManageTable'
+import SpinLoader from 'components/loader/spinLoader'
+import ConfigContext from 'context/configContext'
 
-import { ButtonSolid } from "styles/globals/globalButtons";
-import { formatSnakeToNormal } from "utilities/formatStrings";
-import { TableContainer, TableSimpleContainer } from "./styles";
+import { ButtonSolid } from 'styles/globals/globalButtons'
+import { formatSnakeToNormal } from 'utilities/formatStrings'
+import { TableContainer, TableSimpleContainer } from './styles'
 
 export default function TableEstructure({ data, size = '', search = { orientation: 'horizontal', advance: false }, createButton = false, extraButtons = <></>, style = {}, children }: any) {
   const { setTotalItems } = useContext(ConfigContext)
@@ -46,7 +45,6 @@ export default function TableEstructure({ data, size = '', search = { orientatio
         }
         {(data && data.length === 0) && <p className="noItems">No results</p>}
       </div>
-      {/* <Paginator /> */}
     </TableContainer>
   </>)
 }

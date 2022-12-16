@@ -120,23 +120,23 @@ export const MenuContainer = styled.div<{ status: boolean }>`
       transition: all 0.3s ease 0s;
     }
     ${(props) => {
-      if (props.status) {
-        return css`
+    if (props.status) {
+      return css`
           /* opacity: 1; */
           pointer-events: initial;
           ul {
             transform: translateX(0);
           }
         `
-      } else {
-        return css`
+    } else {
+      return css`
           /* opacity: 0; */
           ul {
             transform: translateX(-100%);
           }
         `
-      }
-    }}
+    }
+  }}
   }
 `
 

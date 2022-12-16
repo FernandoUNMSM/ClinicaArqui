@@ -1,7 +1,7 @@
-import { useModal } from "hooks/useModal";
-import { useRef, useEffect } from "react";
+import { useModal } from 'hooks/useModal'
+import { useRef, useEffect } from 'react'
 
-import { SelectModalContainer, OptionsContainer } from "./styles";
+import { SelectModalContainer, OptionsContainer } from './styles'
 
 export default function SelectModal({
   buttonElement,
@@ -12,21 +12,21 @@ export default function SelectModal({
   disabled = false,
   children
 }: any) {
-  const ref: React.RefObject<any> = useRef(null);
+  const ref: React.RefObject<any> = useRef(null)
   const [isOpen, open, close] = useModal()
 
   const handleClickOutside = (event: any) => {
     if (isOpen && ref.current && !ref.current.contains(event.target)) {
       close()
     }
-  };
+  }
 
   useEffect(() => {
-    window.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener('mousedown', handleClickOutside)
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
   }, [ref, isOpen])//eslint-disable-line
 
   return (

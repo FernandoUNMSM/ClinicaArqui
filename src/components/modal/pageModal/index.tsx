@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef } from 'react'
 
 import { IoMdClose } from 'react-icons/io'
 import { Container, ModalContainer, ModalTitle, ModalContent } from './styles'
@@ -16,7 +16,7 @@ interface Props {
 }
 
 export default function PageModal({ width = 'auto', height = 'auto', title = ' ', closeModal, isOpen, animate = true, overflow = 'auto', children }: Props) {
-  const ref: React.RefObject<any> = useRef(null);
+  const ref: React.RefObject<any> = useRef(null)
 
 
   // const handleClickOutside = (event: any) => {

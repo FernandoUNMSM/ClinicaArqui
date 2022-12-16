@@ -1,5 +1,4 @@
-import useSelect from "hooks/useSelect";
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect } from 'react'
 
 interface Config {
   quantityPerPage?: any,
@@ -15,10 +14,9 @@ interface Config {
   advanceSearch?: any
 }
 
-const ConfigContext = createContext<Config>({});
+const ConfigContext = createContext<Config>({})
 
 export function ConfigContextProvider({ children }: any) {
-  const advanceSearch = useSelect()
   const [quantityPerPage, setQuantityPerPage] = useState(25)
   const [page, setPage] = useState(1)
   const [totalItems, setTotalItems] = useState(10)
@@ -37,7 +35,6 @@ export function ConfigContextProvider({ children }: any) {
   }, [])
 
   return <ConfigContext.Provider value={{
-    advanceSearch,
     quantityPerPage,
     setQuantityPerPage,
     page,
