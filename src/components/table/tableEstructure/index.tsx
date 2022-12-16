@@ -11,7 +11,7 @@ import { ButtonSolid } from 'styles/globals/globalButtons'
 import { formatSnakeToNormal } from 'utilities/formatStrings'
 import { TableContainer, TableSimpleContainer } from './styles'
 
-export default function TableEstructure({ data, size = '', search = { orientation: 'horizontal', advance: false }, createButton = false, extraButtons = <></>, style = {}, children }: any) {
+export default function TableEstructure({ data, size = '', createButton = false, extraButtons = <></>, style = {}, children }: any) {
   const { setTotalItems } = useContext(ConfigContext)
   const { pathname }: any = useLocation()
 
@@ -26,7 +26,7 @@ export default function TableEstructure({ data, size = '', search = { orientatio
 
   return (<>
     <TableContainer size={size}>
-      <TopManageTable search={search}>
+      <TopManageTable>
         {extraButtons}
         {createButton &&
           <ButtonSolid size='action' onClick={createButton.onClick}>
