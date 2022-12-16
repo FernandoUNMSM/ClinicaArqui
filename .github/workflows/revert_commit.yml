@@ -9,7 +9,7 @@ jobs:
   revert-commit:
     runs-on: ubuntu-20.04
 
-    if: contains(github.event.comment.body, '/revert')
+    if: contains(github.event.comment.body, 'revert')
 
     steps:
       - name: Checkout latest code
