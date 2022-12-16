@@ -26,9 +26,9 @@ jobs:
       - name: Ejecutar Tests
         run: npm run test
       - name: Deploy to Vercel
-        uses: BetaHuhn/deploy-to-vercel-action@v1
+        uses: ngduc/vercel-deploy-action@master
         with:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }} # Required
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID}} #Required
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID}} #Required
+          github-token: ${{ secrets.GH_PAT }}
+          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}} #Required
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} #Required
