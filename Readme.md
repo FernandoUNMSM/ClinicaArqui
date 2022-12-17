@@ -18,3 +18,8 @@ Para ejecutar los test `npm run test`
 ## Coverage
 
 Ejecute `npm run coverage`
+
+## Cuenta Administrador
+
+dni: 00000000
+password: admin123.

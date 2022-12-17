@@ -20,8 +20,11 @@ export default function Login({ }) {
     formState: { errors },
   } = useForm()
 
-  const onSubmit = (data: any) => {
-    return Fetch({ url: '/users/auth', data: { dni: data.dni, password: data.password } })
+  const onSubmit = (data: any, evt: any) => {
+    evt.preventDefault()
+    const send = { dni: data.dni, password: data.password }
+    if(send.dni === "" || send.password === "") return
+    Fetch({ url: '/users/auth', data: send })
       .then((res: any) => {
         if (res.success) {
           loginUser(res.data)
