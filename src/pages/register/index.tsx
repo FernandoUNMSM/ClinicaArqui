@@ -163,7 +163,7 @@ export default function Register({ }) {
                 />
               </div>
               <ButtonsContainer align='center'>
-                <ButtonSolid size='large'>Log In</ButtonSolid>
+                <ButtonSolid size='large'>Register</ButtonSolid>
               </ButtonsContainer>
               <p>¿Ya tienes una cuenta? <Link to='/login'>Logeate</Link></p>
             </form>

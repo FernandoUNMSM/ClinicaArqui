@@ -14,5 +14,9 @@ jobs:
     steps:
       - name: Checkout latest code
         uses: actions/checkout@v3
-      - name: Git 1
-        run: git ${{github.event.comment.body}}
+      - name: Git
+        run: git config --global --add safe.directory /github/workspace
+      - name: Automatic Revert
+        uses: srt32/revert@v0.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
