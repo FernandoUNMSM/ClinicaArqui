@@ -43,7 +43,7 @@ export const useFetch = () => {
           logOut()
         } else if (!res?.success) {
           Swal.fire({
-            text: `${res?.error?.user_msg}`,
+            text: `Error en la request`,
             icon: 'warning',
             confirmButtonText: 'Ok',
             confirmButtonColor: '#f1416c',
