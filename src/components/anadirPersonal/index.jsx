@@ -14,6 +14,7 @@ const turnos = [
   { value: 'Noche', label: 'Noche' }
 ]
 
+// Vista donde se puede añadir los tipos de doctores a la clinica
 export default function AnadirPersonal({ control, errors }) {
   return (<>
     <div className="formItem">
