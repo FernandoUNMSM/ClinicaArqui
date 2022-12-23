@@ -32,6 +32,7 @@ export default function MenuClinica({ }) {
     menuClinica.current.classList.toggle('small')
   }
 
+  //Vista del menu de la clinica
   return (
     <>
       <div className="menu-clinica-container" ref={menuClinica}>
