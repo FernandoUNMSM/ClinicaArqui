@@ -58,6 +58,8 @@ export default function RegisterForm({ }) {
         }
       })
   }
+
+  // validaciones de register
   const password = watch("password", "");
 
   const dni = register('dni', {
