@@ -66,6 +66,7 @@ export default function AdministrarCamas({ }) {
       })
   }, [])
 
+  // Vista de las camas, para que los pacientes puedan ver cuales estan desocupadas
   return (<>
     {
       (anadir)

@@ -2,6 +2,7 @@ import React from 'react'
 import {LoginContainer, LoginWindow, Img} from './../Login/styles.js'
 import RegisterForm from './../../components/Register'
 
+//  Exportacion de la funcion register
 export default function Register ({}){
   return (
     <>

@@ -36,6 +36,7 @@ export default function Formulario ({ especialidad, updateEspecialidad, horario,
     }
   },[])
 
+  // Se realiza el formulario para que el paciente realice la cita
   return (<>
     <FormularioContainer>
       <Derecha>
