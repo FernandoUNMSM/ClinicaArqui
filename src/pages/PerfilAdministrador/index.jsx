@@ -7,6 +7,7 @@ import { useContext } from 'react';
 export default function PerfilAdministrador({ }) {
   const {language, setLanguage, texts} = useContext(Context)
 
+  // Vista del administrador
   return (<>
     <Container>
       <PerfilComponent />

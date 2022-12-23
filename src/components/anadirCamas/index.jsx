@@ -8,6 +8,7 @@ import { ErrorMessage } from "@hookform/error-message";
 export default function AnadirCamas({ control, errors }) {
   const { pacientes } = useGetPacientes('')
 
+  // Vista donde se puede elegir al paciente
   return (<>
     <div className="formItem">
       <label htmlFor="paciente">Paciente</label>
