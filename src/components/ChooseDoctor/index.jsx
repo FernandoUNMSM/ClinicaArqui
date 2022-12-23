@@ -59,7 +59,7 @@ export default function ChooseDoctor({ updateDoctor, especialidad, turno }) {
   }, [])
 
 
-
+// Para que puedan escoger al doctor de su preferencia
   return (<>
     <DoctoresContainer>
       <div className="nose">
