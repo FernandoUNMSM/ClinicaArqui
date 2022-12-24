@@ -10,7 +10,7 @@ import 'styles/main.scss'
 import ErrorBoundary from './pages/error/errorBoundary'
 
 import RouterClinica from './router'
-
+//Comentario para redeploy
 function App() {
   const { theme: themeGlobal }: any = useContext(ConfigContext)
   return (
