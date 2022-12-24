@@ -34,6 +34,8 @@ export default function Login({ }) {
       })
   }
 
+  /* Vista de Login
+    Formulario donde el usuario va a completar sus datos*/
   return (<>
     <LoginContainer>
       <LoginWindow>

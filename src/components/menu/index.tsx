@@ -29,6 +29,7 @@ export default function MenuClinica({ status = true }: any) {
     }
   }, [ref, open]);//eslint-disable-line
 
+  // Vista del menú del hospital 
   return (<>
     <MenuContainer status={menuOpen}>
       <ul ref={ref}>
