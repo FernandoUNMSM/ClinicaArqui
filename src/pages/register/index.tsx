@@ -62,7 +62,8 @@ export default function Register({ }) {
   }
   const emailRegex = /^\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b$/i
 
-
+  /* Formulario de register
+  Vista del usuario que se puede registrar si no tiene cuenta*/
   return (
     <>
       <LoginContainer>
